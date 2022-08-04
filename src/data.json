@@ -1,0 +1,129 @@
+{
+  // Plus d'infos: https://api.themoviedb.org/3/tv/66732?api_key=17117ab9c18276d48d8634390c025df4&language=en-US
+  "categories": [
+    { "id": 1, "nom": "Nouveautées", "liste": [1, 8, 10, 4, 2, 3, 7] },
+    { "id": 2, "nom": "Tendances", "liste": [1, 7, 3, 2, 4] },
+    { "id": 3, "nom": "A terminer", "liste": [6, 9, 4, 1, 2] },
+    { "id": 4, "nom": "A revoir", "liste": [8, 9, 2, 1, 10] }
+  ],
+  "films": [
+    {
+      "id": 1,
+      "titre": "Stranger things",
+      "realisateur": "The duffer brothers",
+      "auteur": "The duffer brothers",
+      "annee": "2016",
+      "genre": "science-fiction • drame • horreur",
+      "desc": "En 1983, à Hawkins dans l'Indiana, Will Byers disparaît de son domicile. Ses amis se lancent alors dans une recherche semée d'embûches pour le retrouver. Pendant leur quête de réponses, les garçons rencontrent une étrange jeune fille en fuite.",
+      "acteur": "Millie Bobby Brown, Finn Wolfhard,  Caleb McLaughlin,  Noah Schnapp,  Sadie Sink,  Gaten Matarazzo, David Harbour,  Winona RyderMillie Bobby Brown, Finn Wolfhard,  Caleb McLaughlin,  Noah Schnapp,  Sadie Sink,  Gaten Matarazzo, David Harbour,  Winona Ryder",
+      "img": "/video_imgs/stranger_things.jpg"
+    },
+    {
+      "id": 2,
+      "titre": "Breaking Bad",
+      "realisateur": "Mark Johnson",
+      "auteur": "Vince Gillian",
+      "annee": "2008",
+      "genre": "drame • policier",
+      "desc": "Walter White, 50 ans, est professeur de chimie dans un lycée du Nouveau-Mexique. Pour réunir de l'argent afin de subvenir aux besoins de sa famille, Walter met ses connaissances en chimie à profit pour fabriquer et vendre du crystal meth.",
+      "acteur": "Millie Bobby Brown, Finn Wolfhard,  Caleb McLaughlin,  Noah Schnapp,  Sadie Sink,  Gaten Matarazzo, David Harbour,  Winona Ryder",
+      "img": "/video_imgs/breaking_bad.jpg"
+    },
+
+    {
+      "id": 3,
+      "titre": "Prison Break",
+      "realisateur": "Marty Adelstein",
+      "auteur": "Paul Scheuring",
+      "annee": "2005",
+      "genre": "drame • policier • action",
+      "desc": "Son frère injustement accusé de meurtre, un ingénieur en génie civil décide de le faire évader de prison. Son frère injustement accusé de meurtre, un ingénieur en génie civil décide de le faire évader de prison.",
+      "acteur": "Millie Bobby Brown, Finn Wolfhard,  Caleb McLaughlin,  Noah Schnapp,  Sadie Sink,  Gaten Matarazzo, David Harbour,  Winona Ryder",
+      "img": "/video_imgs/prison_break.jpg"
+    },
+
+    {
+      "id": 4,
+      "titre": "Outer Banks",
+      "realisateur": "Josh and Jonas Pate",
+      "auteur": "Josh and Jonas Pate",
+      "annee": "2020",
+      "genre": "drame • aventure • ado ",
+      "desc": "Un adolescent demande à ses trois meilleurs amis de partir à la recherche d'un trésor légendaire lié à la disparition de son père. Cependant, cette aventure s'avère être un danger pour toutes les personnes impliquées.",
+      "acteur": "Millie Bobby Brown, Finn Wolfhard,  Caleb McLaughlin,  Noah Schnapp,  Sadie Sink,  Gaten Matarazzo, David Harbour,  Winona Ryder",
+      "img": "/video_imgs/outer_banks.jpg"
+    },
+
+    {
+      "id": 5,
+      "titre": "Black Mirror",
+      "realisateur": "Anabel Jones",
+      "auteur": "Charlie Brooker",
+      "annee": "2014",
+      "genre": "dystopie • antologie • science-fiction",
+      "desc": "Chaque épisode a un casting différent, un décor différent et une réalité différente, mais ils traitent tous de la façon dont nous vivons maintenant, et de la façon dont nous pourrions vivre dans dix minutes si nous sommes maladroits.",
+      "acteur": "Millie Bobby Brown, Finn Wolfhard,  Caleb McLaughlin,  Noah Schnapp,  Sadie Sink,  Gaten Matarazzo, David Harbour,  Winona Ryder",
+      "img": "/video_imgs/black_mirror.jpg"
+    },
+
+    {
+      "id": 6,
+      "titre": "Arcane",
+      "realisateur": "Christian Linkee",
+      "auteur": "Marc Merill",
+      "annee": "2021",
+      "genre": "animation • action",
+      "desc": "Au milieu du conflit entre les villes jumelles de Piltover et Zaun, Au milieu du conflit entre les villes jumelles de Piltover et Zaun, deux soeurs se battent dans les camps opposés d'une guerre entre technologies magiques et convictions incompatibles.",
+      "acteur": "Millie Bobby Brown, Finn Wolfhard,  Caleb McLaughlin,  Noah Schnapp,  Sadie Sink,  Gaten Matarazzo, David Harbour,  Winona RyderAUCUNLOL",
+      "img": "/video_imgs/arcane.jpg"
+    },
+
+    {
+      "id": 7,
+      "titre": "Peaky Blinders",
+      "realisateur": "Katie Swinden",
+      "auteur": "Steven Knight",
+      "annee": "2013",
+      "genre": "historique • drame • action",
+      "desc": "Birmingham, en 1919. Un gang familial règne sur un quartier de la ville : les Peaky Blinders, ainsi nommés pour les lames de rasoir qu'ils cachent dans la visière de leur casquette. Birmingham, en 1919. Un gang familial règne sur un quartier de la ville : les Peaky Blinders, ainsi nommés pour les lames de rasoir qu'ils cachent dans la visière de leur casquette.",
+      "acteur": "Millie Bobby Brown, Finn Wolfhard,  Caleb McLaughlin,  Noah Schnapp,  Sadie Sink,  Gaten Matarazzo, David Harbour,  Winona Ryder",
+      "img": "/video_imgs/peaky_blinders.jpg"
+    },
+
+    {
+      "id": 8,
+      "titre": "Squid Game",
+      "realisateur": " Siren Pictures Inc.",
+      "auteur": "Hwang Dong-hyeok",
+      "annee": "2021",
+      "genre": "thriller • drame • dystopie",
+      "desc": "Des personnes en difficultés financières sont invitées à une mystérieuse compétition de survie. Participant à une série de jeux traditionnels pour enfants, mais avec des rebondissements mortels, elles risquent leur vie pour une grosse somme d'argent.",
+      "acteur": "Millie Bobby Brown, Finn Wolfhard,  Caleb McLaughlin,  Noah Schnapp,  Sadie Sink,  Gaten Matarazzo, David Harbour,  Winona Ryder",
+      "img": "/video_imgs/squid_game.jpg"
+    },
+
+    {
+      "id": 9,
+      "titre": "Friends",
+      "realisateur": "David Crane",
+      "auteur": "Marta Kauffman",
+      "annee": "1994",
+      "genre": "comédie • sitcom • ado",
+      "desc": "Les péripéties de trois jeunes femmes et trois jeunes hommes new-yorkais liés par une profonde amitié. Entre amour, travail, famille, ils partagent leurs bonheurs et leurs soucis au Central Perk, leur café favori.",
+      "acteur": "Millie Bobby Brown, Finn Wolfhard,  Caleb McLaughlin,  Noah Schnapp,  Sadie Sink,  Gaten Matarazzo, David Harbour,  Winona Ryder",
+      "img": "/video_imgs/friends.jpg"
+    },
+
+    {
+      "id": 10,
+      "titre": "La Casa de Papel",
+      "realisateur": "Vancouver Media",
+      "auteur": "Alex Pina",
+      "annee": "2019",
+      "genre": "thriller • drame • braquage",
+      "desc": "Huit voleurs font une prise d'otages dans la Maison royale de la Monnaie d'Espagne, tandis qu'un génie du crime manipule la police pour mettre son plan à exécution. Huit voleurs font une prise d'otages dans la Maison royale de la Monnaie d'Espagne, tandis qu'un génie du crime manipule la police pour mettre son plan à exécution.",
+      "acteur": "Millie Bobby Brown, Finn Wolfhard,  Caleb McLaughlin,  Noah Schnapp,  Sadie Sink,  Gaten Matarazzo, David Harbour,  Winona Ryder",
+      "img": "/video_imgs/casa_papel.jpg"
+    }
+  ]
+}

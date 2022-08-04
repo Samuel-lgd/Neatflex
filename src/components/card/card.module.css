@@ -1,0 +1,230 @@
+:root {
+  --hoverDelay: 300ms;
+  --cardWidth: 330px;
+  --cardWidth-20: 310px;
+  --cardHeight: 220px;
+}
+
+@media screen and (max-width: 800px) {
+  :root {
+    --cardWidth: 250px;
+    --cardWidth-20: 230px;
+    --cardHeight: 220px;
+  }
+}
+.card {
+  position: relative;
+  height: var(--cardHeight);
+  margin: 14px;
+  margin-top: 28px;
+  width: var(--cardWidth);
+  margin-bottom: 30px;
+  bottom: 0px;
+  transition: 300ms;
+  scale: 1;
+  transition-delay: 0ms;
+}
+
+.cardHover {
+  transition: 300ms;
+  scale: 1.04;
+  transform: translateY(5px);
+  border-radius: 10px;
+  transition-delay: var(--hoverDelay);
+}
+
+.cardTruc {
+  position: absolute;
+  height: var(--cardHeight);
+  margin: 14px;
+  margin-top: 28px;
+  width: var(--cardWidth);
+  margin-bottom: 30px;
+  border-radius: 7px;
+  transition: 200ms;
+  transition-delay: 0ms;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 20px;
+}
+
+.flex {
+  display: flex;
+}
+.cardList {
+  position: relative;
+  left: 0px;
+  margin-bottom: 50px;
+  width: 100%;
+  height: 255px;
+}
+
+.imgContainer {
+  object-fit: cover;
+  border-radius: 7px 7px 0px 0px;
+  height: 180px;
+  width: var(--cardWidth);
+  opacity: 1;
+  position: relative;
+  left: 50%;
+  bottom: 0px;
+  transform: translateX(-50%);
+  transition: 250ms;
+  transition-delay: 0ms;
+  overflow: hidden;
+}
+
+.imgHoverContainer {
+  transition-delay: var(--hoverDelay);
+  bottom: 25px;
+  border-radius: 10px;
+}
+
+.img {
+  scale: 1;
+  position: relative;
+  top: -40px;
+  object-fit: cover;
+  width: var(--cardWidth);
+  transition: 330ms;
+  transition-delay: 0ms;
+}
+
+.imgHover {
+  top: -175px;
+  transition-delay: var(--hoverDelay);
+}
+
+.desc {
+  border-radius: 0px 0px 7px 7px;
+  overflow: hidden;
+  padding: 10px;
+  width: var(--cardWidth-20);
+  max-height: 25px;
+  padding-top: 5px;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  background-color: #292929;
+  transition: 500ms;
+}
+
+.descHover {
+  transition-delay: var(--hoverDelay);
+  scale: 1.05;
+  max-height: 138px;
+  padding-top: 7px;
+  padding-left: 12px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px -5px 15px 5px;
+}
+
+.genres {
+  color: rgb(170, 170, 170);
+}
+
+.infos {
+  margin-top: 7px;
+}
+
+.background {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: #0000006d;
+  z-index: 1;
+  position: fixed;
+}
+
+.plus {
+  position: relative;
+  margin: 8px;
+  bottom: 0px;
+  margin-left: 2px;
+  display: block ruby;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.plus h4 {
+  position: relative;
+  top: 2px;
+  margin-left: 15px;
+  transition: 0.5s;
+}
+
+.fleche {
+  border: solid #ce0000;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  position: absolute;
+  padding: 3px;
+  transform: rotate(-45deg);
+  opacity: 1;
+  bottom: 3px;
+  transition: 0.5s;
+  margin-right: 7px;
+}
+
+#id2 {
+  margin-left: 90px;
+  opacity: 0;
+}
+
+.plus:hover i {
+  margin-left: 90px;
+}
+
+.plus:hover #id2 {
+  transition-delay: 350ms;
+  margin-left: 100px;
+  opacity: 1;
+}
+
+.plus:hover h4 {
+  margin-left: 0px;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rating {
+  color: #46d369;
+  font-weight: 700;
+  margin-top: 8px;
+  margin-bottom: 3px;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.bottom {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.likeBtn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 3px 6px;
+  /* height: 27px; */
+  border-radius: 6px;
+}
+
+.likeBtn span {
+  position: relative;
+  transition: 300ms;
+  top: 1px;
+}
+
+.likeBtn:active span {
+  scale: 1.25;
+  transition: 0ms;
+}

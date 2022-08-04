@@ -1,0 +1,103 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #181a1b;
+  scroll-behavior: smooth;
+  /* #181a1b; */
+}
+button {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  font-size: 1rem;
+}
+
+/* html {
+  scroll-behavior: smooth;
+} */
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+h5,
+h4,
+h3,
+h2,
+h1,
+p {
+  margin: 0px;
+  color: #e8e6e3;
+}
+
+h2 {
+  font-size: 1.3rem;
+  margin-bottom: 3px;
+  line-height: 28px;
+}
+
+.backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  padding-top: 85vh;
+  display: block;
+  margin-bottom: 50px;
+}
+
+.listHeader {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  line-height: 0px;
+}
+
+.listHeader::before {
+  content: "";
+  display: inline-block;
+  position: relative;
+  top: 2px;
+  height: 1em;
+  width: 6px;
+  margin-right: 5px;
+  background-color: #e50914;
+}
+
+.margin {
+  margin: 0px 70px 0px 70px;
+}
+
+.icon {
+  size: "2em";
+}
+
+.react-horizontal-scrolling-menu--scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.react-horizontal-scrolling-menu--scroll-container {
+  scrollbar-width: none;
+}
+
+.react-horizontal-scrolling-menu--inner-wrapper {
+  overflow: hidden;
+}
+
+/* .react-horizontal-scrolling-menu--arrow-right {
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 20px;
+  position: relative;
+} */

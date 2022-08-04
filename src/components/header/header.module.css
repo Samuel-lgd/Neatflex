@@ -1,0 +1,332 @@
+.content {
+  box-sizing: border-box;
+  background: rgb(24, 26, 27);
+  background: linear-gradient(
+    0deg,
+    rgba(24, 26, 27, 0) 3%,
+    rgba(0, 0, 0, 0.6) 40%,
+    rgba(3, 3, 3, 1) 100%
+  );
+  position: fixed;
+  z-index: 101;
+  top: 0px;
+  width: 100vw;
+  padding: 13px 3vw 13px 3vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.bgGradient {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 70px;
+  background-color: rgba(24, 26, 27, 1);
+  z-index: 100;
+  opacity: 1;
+  transition: 500ms;
+}
+
+.bgGradientHidden {
+  opacity: 0;
+}
+.row {
+  gap: 35px;
+  align-items: center;
+  display: flex;
+}
+
+.link {
+  text-decoration: none;
+}
+.img {
+  position: relative;
+  top: 3px;
+  height: 40px;
+}
+
+.imgFullscreen {
+  width: 100vw;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 98vh;
+  object-fit: cover;
+  opacity: 1;
+  transition: 500ms ease;
+  scale: 1;
+}
+
+.opacity {
+  scale: 1.1;
+  opacity: 0;
+  transition: 500ms ease;
+}
+
+.filmContent {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding-left: 5vw;
+  padding-right: 5vh;
+  padding-top: 25vh;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  /* height: 90vh; */
+  z-index: 1;
+}
+
+.button {
+  background-color: white;
+  height: 50px;
+  width: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 5px;
+  margin-top: 25px;
+  border-radius: 7px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+.buttonAddList {
+  background-color: rgba(44, 44, 44, 0.8);
+  height: 50px;
+  width: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 5px;
+  margin-top: 25px;
+  border-radius: 7px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.buttonAddList:hover {
+  opacity: 0.9;
+}
+
+.buttons {
+  display: flex;
+  gap: 25px;
+}
+
+.bigTitle {
+  font-size: 5.5vw;
+
+  color: white;
+  font-weight: 700;
+  text-shadow: 0px 0px 15px #000000;
+}
+
+.filmDesc {
+  font-size: 2vw;
+  font-style: italic;
+  color: white;
+  font-weight: 600;
+  text-shadow: 0px 0px 10px #000000;
+}
+
+.bottomGradient {
+  position: absolute;
+  bottom: 2vh;
+  left: 0px;
+  width: 100vw;
+  height: 30vh;
+  background: linear-gradient(
+    0deg,
+    rgba(24, 26, 27, 1) 0%,
+    rgba(24, 26, 27, 0) 100%
+  );
+}
+
+.bottomBg {
+  position: absolute;
+  bottom: 0vh;
+  left: 0px;
+  height: 2vh;
+  width: 100vw;
+  background: rgba(24, 26, 27, 1);
+}
+
+.searchBarContainer {
+  position: relative;
+  left: 35px;
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  position: relative;
+  right: -43px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* cursor: pointer; */
+  color: white;
+  height: 40px;
+  width: 40px;
+  z-index: 0;
+}
+
+.searchInput {
+  position: relative;
+  background-color: rgba(255, 254, 254, 0.108);
+  cursor: pointer;
+  z-index: 100;
+  height: 35px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  color: white;
+  font-size: 1.1rem;
+  width: 0px;
+  padding: 2px 0px 2px 45px;
+  transition: 300ms;
+}
+.closeIconHidden {
+  position: relative;
+  left: -43px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: white;
+  height: 40px;
+  width: 40px;
+  z-index: 0;
+  opacity: 0;
+  transition: 200ms;
+}
+
+.closeIcon {
+  position: relative;
+  left: -43px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: white;
+  height: 40px;
+  width: 40px;
+  z-index: 101;
+  opacity: 1;
+  transition: 200ms;
+}
+
+.searchInputFocused {
+  cursor: text;
+  width: 200px;
+  padding: 2px 7px 2px 47px;
+}
+
+.results {
+  box-sizing: border-box;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  width: 100vw;
+  left: 0px;
+  top: 70px;
+  max-height: 230px;
+  background-color: #181a1b;
+  overflow: hidden;
+  transition: 500ms;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 15px 15px;
+}
+
+.resultsHidden {
+  max-height: 0px;
+  transition: 500ms;
+}
+
+.resultCard {
+  flex: 1 0 max-content;
+  margin: 10px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 5px;
+  padding: 3px 10px;
+  overflow: hidden;
+}
+
+.resultCard:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.resultCard h2 {
+  width: auto;
+}
+
+.noResults {
+  font-size: 1.1rem;
+  margin: 2.5vh 0px;
+}
+
+.spaceBetween {
+  display: flex;
+  justify-content: space-between;
+}
+
+.rating {
+  margin-left: 20px;
+  color: #bebebe;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 800px) {
+  .filmContent {
+    align-items: center;
+  }
+  .bigTitle {
+    font-size: 40px;
+  }
+  .filmDesc {
+    font-size: 18px;
+  }
+  .img {
+    position: relative;
+    top: 3px;
+    height: 40px;
+    width: 17px;
+    object-fit: cover;
+    object-position: left;
+  }
+  .row {
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .searchBarContainer {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    top: 60px;
+  }
+  .bgGradient {
+    height: 115px;
+  }
+  .results {
+    top: 115px;
+  }
+
+  .searchInputFocused {
+    width: 75vw;
+  }
+}

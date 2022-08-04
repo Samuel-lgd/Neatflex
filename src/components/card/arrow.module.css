@@ -1,0 +1,74 @@
+.bg {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 33%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 800px) {
+  .bg {
+    width: 40px;
+  }
+}
+
+.arrow {
+  cursor: pointer;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  left: 0px;
+  transition: 400ms cubic-bezier(0.64, -0.61, 0.41, 1.6);
+}
+
+.arrow::before {
+  content: "";
+  position: absolute;
+  left: -5px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 0%;
+  border-left: 2px solid white;
+  transition: 400ms;
+}
+
+.arrow:hover::before {
+  height: 200%;
+}
+
+.hidden {
+  left: 100px;
+}
+
+.arrowLeft {
+  cursor: pointer;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  right: 0px;
+  transition: 400ms cubic-bezier(0.64, -0.61, 0.41, 1.6);
+}
+
+.arrowLeft::before {
+  content: "";
+  position: absolute;
+  right: -5px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 0%;
+  border-right: 2px solid white;
+  transition: 400ms;
+}
+
+.arrowLeft:hover::before {
+  height: 200%;
+}
+
+.hiddenLeft {
+  right: 100px;
+}

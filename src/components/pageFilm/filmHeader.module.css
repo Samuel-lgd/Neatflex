@@ -1,0 +1,87 @@
+.content {
+  box-sizing: border-box;
+  padding: 0vw 5vw 0px 5vw;
+  height: 80px;
+  width: 100vw;
+  background-color: #181a1b;
+  z-index: 100;
+  position: fixed;
+  top: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 1;
+  transition: 333ms;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding-bottom: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  .content {
+    top: 115px;
+  }
+}
+.content h1 {
+  position: relative;
+  bottom: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* number of lines to show */
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.hide {
+  opacity: 0;
+  transition: 333ms;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.button {
+  background-color: white;
+  min-width: 110px;
+  height: 50px;
+  width: 125px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 7px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-right: 20px;
+  transition: 300ms;
+}
+
+select {
+  border: 0px;
+  height: 3rem;
+  width: 250px;
+  margin-left: 25px;
+  color: white;
+  font-size: 1.2rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  font-weight: 600;
+  background-color: rgb(31, 33, 35);
+  border: 3px solid rgb(116, 116, 116);
+}
+
+@media screen and (max-width: 1000px) {
+  .content p {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .content h1 {
+    display: none;
+  }
+}
