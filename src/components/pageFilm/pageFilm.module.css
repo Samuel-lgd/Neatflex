@@ -139,9 +139,9 @@
 
 .bottomBg {
   position: absolute;
-  bottom: -7vh;
+  bottom: -20vh;
   left: 0px;
-  height: 5vh;
+  height: 18vh;
   width: 100vw;
   background: rgba(24, 26, 27, 1);
 }

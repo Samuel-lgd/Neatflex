@@ -155,11 +155,11 @@
 
 .bottomBg {
   position: absolute;
-  bottom: 0vh;
+  bottom: -18vh;
   left: 0px;
-  height: 2vh;
+  height: 20vh;
   width: 100vw;
-  background: rgba(24, 26, 27, 1);
+  background-color: rgba(24, 26, 27, 1);
 }
 
 .searchBarContainer {
@@ -292,6 +292,8 @@
 @media screen and (max-width: 800px) {
   .filmContent {
     align-items: center;
+    padding-left: 0px;
+    padding-right: 0px;
   }
   .bigTitle {
     font-size: 40px;
