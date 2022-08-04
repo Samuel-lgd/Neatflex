@@ -36,11 +36,11 @@ function Header() {
       ></div>
       <div className={styles.content}>
         <div className={styles.row}>
-          <Link style={{ textDecoration: "none" }} to="/">
+          <Link style={{ textDecoration: "none" }} to="/Neatflex">
             <img className={styles.img} src={logo}></img>
           </Link>
 
-          <Link style={{ textDecoration: "none" }} to="/">
+          <Link style={{ textDecoration: "none" }} to="/Neatflex">
             <p className={styles.link}>Home</p>
           </Link>
           <Link style={{ textDecoration: "none" }} to="/genres">

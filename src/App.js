@@ -36,7 +36,7 @@ function App() {
         <Routes>
           <Route
             exact
-            path="/"
+            path="/Neatflex"
             element={
               <>
                 {data ? <HeaderVideo filmId={data.results[0].id} /> : null}
