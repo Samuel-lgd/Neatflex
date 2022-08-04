@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Neatflex/static/css/main.5c168054.css",
+    "main.js": "/Neatflex/static/js/main.76d4958d.js",
+    "static/media/neatflex.png": "/Neatflex/static/media/neatflex.79be1525c1fc7c2c49e4.png",
+    "index.html": "/Neatflex/index.html",
+    "main.5c168054.css.map": "/Neatflex/static/css/main.5c168054.css.map",
+    "main.76d4958d.js.map": "/Neatflex/static/js/main.76d4958d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5c168054.css",
+    "static/js/main.76d4958d.js"
+  ]
+}
