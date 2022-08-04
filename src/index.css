@@ -7,6 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #181a1b;
   scroll-behavior: smooth;
+  overflow-x: hidden;
   /* #181a1b; */
 }
 button {
@@ -16,9 +17,6 @@ button {
   font-size: 1rem;
 }
 
-/* html {
-  scroll-behavior: smooth;
-} */
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

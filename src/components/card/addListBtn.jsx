@@ -4,7 +4,6 @@ import { MdAdd, MdOutlineDone } from "react-icons/md";
 
 function AddListBtn(isAdded) {
   const [added, setAdded] = useState(isAdded);
-  console.log(isAdded);
 
   function handleLike() {
     setAdded((added) => !added);

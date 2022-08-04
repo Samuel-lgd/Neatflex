@@ -3,7 +3,19 @@
   align-items: center;
   box-sizing: border-box;
   padding: 30px;
-  gap: 30px;
+  gap: 2vw;
   width: 100%;
   background-color: #131415;
+}
+
+@media screen and (max-width: 500px) {
+  .footer {
+    flex-direction: column;
+  }
+  .img {
+    flex: none;
+  }
+  .bullet {
+    display: none;
+  }
 }

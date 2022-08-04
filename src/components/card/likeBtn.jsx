@@ -4,7 +4,6 @@ import { AiOutlineLike, AiFillLike } from "react-icons/ai";
 
 function LikeBtn(isLiked) {
   const [liked, setLiked] = useState(isLiked);
-  console.log(isLiked);
 
   function handleLike() {
     setLiked((liked) => !liked);

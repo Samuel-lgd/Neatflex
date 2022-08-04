@@ -86,9 +86,6 @@
   position: relative;
   bottom: 180px;
 }
-.button:hover {
-  padding: 1px;
-}
 
 .content {
   margin-bottom: 50px;
@@ -142,9 +139,9 @@
 
 .bottomBg {
   position: absolute;
-  bottom: -2vh;
+  bottom: -7vh;
   left: 0px;
-  height: 0vh;
+  height: 5vh;
   width: 100vw;
   background: rgba(24, 26, 27, 1);
 }
