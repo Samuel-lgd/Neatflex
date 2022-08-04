@@ -4,12 +4,15 @@ import VoirPlus from "./voirPlus";
 import { Link } from "react-router-dom";
 import LikeBtn from "./likeBtn";
 import AddListBtn from "./addListBtn";
+import { isMobile } from "react-device-detect";
 
 function CardDesc(props) {
   return (
     <div
       className={
-        props.isHovering ? `${styles.desc} ${styles.descHover}` : styles.desc
+        props.isHovering || isMobile
+          ? `${styles.desc} ${styles.descHover}`
+          : styles.desc
       }
     >
       <Link style={{ textDecoration: "none" }} to={`/film/${props.film.id}`}>
