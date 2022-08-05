@@ -1,6 +1,6 @@
 import React from "react";
-import styles from "./filmHeader.module.css";
 import { ImPlay3 } from "react-icons/im";
+import styles from "./filmHeader.module.css";
 
 function Header(props) {
   function pluriel(elt) {

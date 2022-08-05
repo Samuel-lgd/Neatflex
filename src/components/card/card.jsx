@@ -1,8 +1,8 @@
 import React, { useState } from "react";
+import { isMobile } from "react-device-detect";
+import { Link } from "react-router-dom";
 import styles from "./card.module.css";
 import CardDesc from "./cardDesc";
-import { Link } from "react-router-dom";
-import { isMobile } from "react-device-detect";
 
 function Card(props) {
   const [isHovering, setIsHovering] = useState(false);

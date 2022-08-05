@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { isMobile } from "react-device-detect";
+import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
+import { MdChevronLeft, MdChevronRight } from "react-icons/md";
+import arrow from "./arrow.module.css";
 import Card from "./card";
 import styles from "./card.module.css";
-import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
-import arrow from "./arrow.module.css";
-import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 import EmptyCard from "./emptyCard";
-import { isMobile } from "react-device-detect";
 
 function CardList(props) {
   function RightArrow() {

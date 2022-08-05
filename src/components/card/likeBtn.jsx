@@ -1,6 +1,6 @@
 import React, { useState } from "react";
+import { AiFillLike, AiOutlineLike } from "react-icons/ai";
 import styles from "./card.module.css";
-import { AiOutlineLike, AiFillLike } from "react-icons/ai";
 
 function LikeBtn(isLiked) {
   const [liked, setLiked] = useState(isLiked);

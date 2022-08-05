@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import styles from "./header.module.css";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import SearchBar from "./searchBar";
 import logo from "../../neatflex.png";
+import styles from "./header.module.css";
+import SearchBar from "./searchBar";
 
 function Header() {
   const [pageY, setPageY] = useState(0);

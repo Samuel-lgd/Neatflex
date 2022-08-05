@@ -1,7 +1,6 @@
-import React, { useState } from "react";
-import { useEffect } from "react";
-import CardList from "./card/cardList";
+import React, { useEffect, useState } from "react";
 import api from "../apiData.json";
+import CardList from "./card/cardList";
 
 function Home(props) {
   const [genres, setGenres] = useState(null);

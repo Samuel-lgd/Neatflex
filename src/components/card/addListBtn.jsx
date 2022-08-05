@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import styles from "./card.module.css";
 import { MdAdd, MdOutlineDone } from "react-icons/md";
+import styles from "./card.module.css";
 
 function AddListBtn(isAdded) {
   const [added, setAdded] = useState(isAdded);

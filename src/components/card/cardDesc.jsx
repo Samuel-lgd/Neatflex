@@ -1,10 +1,9 @@
-import React, { useState } from "react";
-import styles from "./card.module.css";
-import VoirPlus from "./voirPlus";
-import { Link } from "react-router-dom";
-import LikeBtn from "./likeBtn";
-import AddListBtn from "./addListBtn";
+import React from "react";
 import { isMobile } from "react-device-detect";
+import { Link } from "react-router-dom";
+import AddListBtn from "./addListBtn";
+import styles from "./card.module.css";
+import LikeBtn from "./likeBtn";
 
 function CardDesc(props) {
   return (
@@ -21,8 +20,6 @@ function CardDesc(props) {
       <p className={styles.genres}>
         {props.genre.join(" • ")} | {props.film.first_air_date.slice(0, 4)}
       </p>
-      {/* <VoirPlus handleClick={props.openModal} id={props.film.id} />
-       */}
       <div className={styles.bottom}>
         <p className={styles.rating}>
           Score: {props.film.vote_average.toFixed(1) * 10}%

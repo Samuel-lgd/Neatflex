@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useRef } from "react";
-import styles from "./pageFilm.module.css";
-import { useParams, useLocation } from "react-router-dom";
+import React, { useEffect, useRef, useState } from "react";
+import { BsChevronDoubleDown } from "react-icons/bs";
 import { ImPlay3 } from "react-icons/im";
+import { useLocation, useParams } from "react-router-dom";
+import CardList from "../card/cardList";
 import Episode from "./episode";
 import Header from "./header";
-import CardList from "../card/cardList";
-import { BsChevronDoubleDown } from "react-icons/bs";
+import styles from "./pageFilm.module.css";
 
 function PageFilm() {
   const [data, setData] = useState();

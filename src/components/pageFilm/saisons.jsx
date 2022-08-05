@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import Episodes from "./episode";
+import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import Episodes from "./episode";
 
 function Saisons(props) {
   const [selectedSeason, setselectedSeason] = useState(1);
