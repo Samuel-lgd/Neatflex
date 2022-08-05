@@ -142,7 +142,7 @@
 
 .bottomGradient {
   position: absolute;
-  bottom: 2vh;
+  top: 68vh;
   left: 0px;
   width: 100vw;
   height: 30vh;
@@ -159,7 +159,7 @@
 
 .bottomBg {
   position: absolute;
-  bottom: -18vh;
+  top: 98vh;
   left: 0px;
   height: 20vh;
   width: 100vw;

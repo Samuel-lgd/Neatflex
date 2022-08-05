@@ -1,10 +1,12 @@
 .footer {
+  position: absolute;
+  bottom: 0px;
   display: flex;
   align-items: center;
   box-sizing: border-box;
   padding: 30px;
   gap: 2vw;
-  width: 100%;
+  width: 100vw;
   background-color: #131415;
 }
 

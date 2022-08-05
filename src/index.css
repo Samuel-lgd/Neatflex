@@ -10,6 +10,16 @@ body {
   overflow-x: hidden;
   /* #181a1b; */
 }
+
+.App {
+  position: absolute;
+  top: 0px;
+  min-height: 100vh;
+}
+.appContent {
+  padding-bottom: 150px;
+}
+
 button {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",

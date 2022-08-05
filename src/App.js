@@ -33,25 +33,26 @@ function App() {
     <React.StrictMode>
       <div className="App">
         <Header />
-        <Routes>
-          <Route
-            exact
-            path="/Neatflex"
-            element={
-              <>
-                {data ? <HeaderVideo filmId={data.results[0].id} /> : null}
-                <Home />
-              </>
-            }
-          ></Route>
-          <Route path="/genres" element={<Genres />}></Route>
-        </Routes>
-        <Routes>
-          <Route path="/film">
-            <Route path=":id" element={<PageFilm />} />
-          </Route>
-        </Routes>
-
+        <div className="appContent">
+          <Routes>
+            <Route
+              exact
+              path="/Neatflex"
+              element={
+                <>
+                  {data ? <HeaderVideo filmId={data.results[0].id} /> : null}
+                  <Home />
+                </>
+              }
+            ></Route>
+            <Route path="/genres" element={<Genres />}></Route>
+          </Routes>
+          <Routes>
+            <Route path="/film">
+              <Route path=":id" element={<PageFilm />} />
+            </Route>
+          </Routes>
+        </div>
         <Footer />
       </div>
     </React.StrictMode>

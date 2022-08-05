@@ -78,8 +78,6 @@
   font-weight: 700;
   font-size: 1.2rem;
   transition: 300ms;
-  /* position: sticky;
-  top: 75px; */
 }
 
 .scrollToMe {
@@ -126,7 +124,7 @@
 
 .bottomGradient {
   position: absolute;
-  bottom: -2vh;
+  top: 68vh;
   left: 0px;
   height: 30vh;
   width: 100vw;
@@ -139,7 +137,7 @@
 
 .bottomBg {
   position: absolute;
-  bottom: -20vh;
+  top: 98vh;
   left: 0px;
   height: 18vh;
   width: 100vw;
