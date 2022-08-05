@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import styles from "./pageFilm.module.css";
 import { useParams, useLocation } from "react-router-dom";
 import { ImPlay3 } from "react-icons/im";
-import Episode from "../card/modal/episode";
+import Episode from "./episode";
 import Header from "./header";
 import CardList from "../card/cardList";
 import { BsChevronDoubleDown } from "react-icons/bs";
@@ -11,7 +11,6 @@ function PageFilm() {
   const [data, setData] = useState();
   const [imgLoaded, setImgLoaded] = useState();
   const [selectedSeason, setselectedSeason] = useState(1);
-  const [pageY, setPageY] = useState();
   const [genres, setGenres] = useState(null);
   const [showHeader, setShowHeader] = useState(false);
   const [reco, setReco] = useState();
@@ -43,7 +42,6 @@ function PageFilm() {
 
   useEffect(() => {
     const handleScroll = (event) => {
-      setPageY(window.scrollY);
       if (
         window.scrollY >
         refHeight.current.offsetTop - refHeight.current.clientHeight - 20
@@ -102,6 +100,16 @@ function PageFilm() {
     refContent.current.scrollIntoView({ behavior: "smooth" });
   }
 
+  function showReco() {
+    if (reco) {
+      if (reco.total_results > 0) {
+        return true;
+      }
+      return false;
+    }
+    return false;
+  }
+
   return (
     <>
       <div className={styles.container}>
@@ -144,7 +152,7 @@ function PageFilm() {
             <Episode filmId={data.id} seasonId={selectedSeason} />
           </div>
         ) : null}
-        {reco ? (
+        {showReco() ? (
           <CardList
             titre={" Recommandations"}
             key={"recos"}

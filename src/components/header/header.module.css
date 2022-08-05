@@ -153,6 +153,10 @@
   );
 }
 
+.loginBtn {
+  cursor: not-allowed;
+}
+
 .bottomBg {
   position: absolute;
   bottom: -18vh;

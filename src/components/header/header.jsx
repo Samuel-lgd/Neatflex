@@ -49,7 +49,7 @@ function Header() {
         </div>
         <div className={styles.row}>
           <SearchBar handleFocus={onFocus} handleBlur={onBlur} />
-          <p>Connexion</p>
+          <p className={styles.loginBtn}>Connexion</p>
         </div>
       </div>
     </>

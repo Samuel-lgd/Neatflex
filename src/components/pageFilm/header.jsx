@@ -11,8 +11,10 @@ function Header(props) {
 
   function showYear() {
     const firstYear = props.data.first_air_date.slice(0, 4);
-    const lastYear = props.data.last_air_date.slice(0, 4);
-    if (firstYear === lastYear) {
+    const lastYear = props.data.last_air_date
+      ? props.data.last_air_date.slice(0, 4)
+      : null;
+    if (firstYear === lastYear || lastYear === null) {
       return <p>{firstYear}</p>;
     }
     return (
