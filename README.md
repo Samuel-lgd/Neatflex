@@ -1,3 +1,3 @@
 # Neatflex
 
-Project realized to learn react / improve my javascript skills.
+Project realized to learn react, use APIs and  improve my javascript skills.
