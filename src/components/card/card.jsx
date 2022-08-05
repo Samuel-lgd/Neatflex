@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "./card.module.css";
 import CardDesc from "./cardDesc";
 import { Link } from "react-router-dom";
+import { isMobile } from "react-device-detect";
 
 function Card(props) {
   const [isHovering, setIsHovering] = useState(false);
@@ -23,10 +24,14 @@ function Card(props) {
     <>
       <div
         className={
-          isHovering ? `${styles.card} ${styles.cardHover}` : styles.card
+          isMobile
+            ? `${styles.card} ${styles.cardMobile}`
+            : isHovering
+            ? `${styles.card} ${styles.cardHover}`
+            : styles.card
         }
-        onMouseOver={() => setIsHovering(true)}
-        onMouseOut={() => setIsHovering(false)}
+        onMouseOver={() => (isMobile ? null : setIsHovering(true))}
+        onMouseOut={() => (isMobile ? null : setIsHovering(false))}
       >
         {props.film.poster_path ? (
           <div

@@ -5,13 +5,14 @@ import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
 import arrow from "./arrow.module.css";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 import EmptyCard from "./emptyCard";
+import { isMobile } from "react-device-detect";
 
 function CardList(props) {
   function RightArrow() {
     const { isLastItemVisible, scrollNext } =
       React.useContext(VisibilityContext);
 
-    return (
+    return isMobile ? null : (
       <div className={arrow.bg} onClick={() => scrollNext()}>
         <div
           className={
@@ -28,7 +29,7 @@ function CardList(props) {
     const { isFirstItemVisible, scrollPrev } =
       React.useContext(VisibilityContext);
 
-    return (
+    return isMobile ? null : (
       <div className={arrow.bg} onClick={() => scrollPrev()}>
         <div
           className={
@@ -47,7 +48,7 @@ function CardList(props) {
     <>
       <div className="cardListContainer">
         <h1 className="margin listHeader">{props.titre}</h1>
-        <div className={styles.cardList}>
+        <div className={isMobile ? styles.cardListMobile : styles.cardList}>
           <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow}>
             {props.data && props.genres
               ? props.data.results.map((filmData, i) => (
