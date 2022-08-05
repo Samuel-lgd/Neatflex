@@ -6,7 +6,6 @@ import api from "../apiData.json";
 function Home(props) {
   const [genres, setGenres] = useState(null);
   const [data, setData] = useState(null);
-  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     fetch(
@@ -40,8 +39,10 @@ function Home(props) {
         .then((actualData) => {
           allData.push(actualData);
         })
+        .finally(() =>
+          allData.length === api.categories.length ? setData(allData) : null
+        )
     );
-    setData(allData);
   }
 
   return (
