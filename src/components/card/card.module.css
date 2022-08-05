@@ -110,7 +110,7 @@
 .descHover {
   transition-delay: var(--hoverDelay);
   scale: 1.05;
-  max-height: 138px;
+  max-height: 148px;
   padding-top: 7px;
   padding-left: 12px;
   border-radius: 10px;
