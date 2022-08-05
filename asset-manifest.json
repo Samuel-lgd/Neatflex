@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/Neatflex/static/css/main.b2d158a3.css",
-    "main.js": "/Neatflex/static/js/main.da15025a.js",
+    "main.css": "/Neatflex/static/css/main.7b8f79bb.css",
+    "main.js": "/Neatflex/static/js/main.a0be915f.js",
     "static/media/neatflex.png": "/Neatflex/static/media/neatflex.79be1525c1fc7c2c49e4.png",
     "index.html": "/Neatflex/index.html",
-    "main.b2d158a3.css.map": "/Neatflex/static/css/main.b2d158a3.css.map",
-    "main.da15025a.js.map": "/Neatflex/static/js/main.da15025a.js.map"
+    "main.7b8f79bb.css.map": "/Neatflex/static/css/main.7b8f79bb.css.map",
+    "main.a0be915f.js.map": "/Neatflex/static/js/main.a0be915f.js.map"
   },
   "entrypoints": [
-    "static/css/main.b2d158a3.css",
-    "static/js/main.da15025a.js"
+    "static/css/main.7b8f79bb.css",
+    "static/js/main.a0be915f.js"
   ]
 }
