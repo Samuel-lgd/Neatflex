@@ -26,7 +26,7 @@ function CardDesc(props) {
         </p>
         <div style={{ display: "flex", gap: "10px" }}>
           <LikeBtn isLiked={false} />
-          <AddListBtn isLiked={false} />
+          <AddListBtn filmId={props.film.id} />
         </div>
       </div>
     </div>

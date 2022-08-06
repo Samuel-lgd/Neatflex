@@ -19,7 +19,18 @@ function Card(props) {
     return listGenres;
   }
 
-  const genre = filterGenres(props.film.genre_ids, props.genres);
+  function getIds() {
+    let genres = [];
+    props.film.genres.map((genre, i) => {
+      genres.push(genre.id);
+    });
+    return genres;
+  }
+  const genre = filterGenres(
+    props.film.genre_ids ? props.film.genre_ids : getIds(),
+    props.genres
+  );
+
   return (
     <>
       <div
