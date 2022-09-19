@@ -29,3 +29,24 @@ button:active {
   flex-wrap: wrap;
   margin: 25px;
 }
+
+.genreTitle {
+  font-size: max(25px, 4vw);
+  text-align: center;
+}
+
+.genreTitle::before,
+.genreTitle::after {
+  display: inline-block;
+  content: "";
+  border-top: 0.4vw solid rgb(255, 255, 255);
+  width: 5vw;
+  margin: 0 1rem;
+  transform: translateY(-1vw);
+}
+
+.cardListGenres {
+  justify-content: space-around;
+  flex-wrap: wrap;
+  display: flex;
+}

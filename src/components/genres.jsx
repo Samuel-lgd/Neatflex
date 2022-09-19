@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
-import CardList from "./card/cardList";
+import Card from "./card/card";
 import styles from "./genres.module.css";
 
 function Genres(props) {
   const [data, setData] = useState(null);
   const [genres, setGenres] = useState(null);
-  const [genreId, setGenreId] = useState(null);
-  const [cardList, setCardList] = useState(null);
+  const [genreTitle, setGenreTitle] = useState(null);
 
   useEffect(() => {
     fetch(
@@ -43,16 +42,9 @@ function Genres(props) {
       });
   }
 
-  useEffect(() => {
-    // getData(80);
-    // getData(10759);
-  }, []);
-
   function genreClick(e) {
     getData(e.target.value);
-    setCardList({
-      titre: e.target.innerText,
-    });
+    setGenreTitle(e.target.innerText);
   }
 
   return (
@@ -67,9 +59,14 @@ function Genres(props) {
               ))
             : null}
         </div>
-        {data ? (
-          <CardList data={data} titre={cardList.titre} genres={genres} />
-        ) : null}
+        <h1 className={styles.genreTitle}>{genreTitle}</h1>
+        <div className={styles.cardListGenres}>
+          {data && genres
+            ? data.results.map((filmData, i) => (
+                <Card film={filmData} genres={genres} />
+              ))
+            : null}
+        </div>
       </div>
     </div>
     // filter  https://api.themoviedb.org/3/discover/tv?api_key=17117ab9c18276d48d8634390c025df4&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&vote_average.gte=6&with_genres=18

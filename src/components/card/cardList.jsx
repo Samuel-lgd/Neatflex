@@ -55,10 +55,10 @@ function CardList(props) {
                   <>
                     <Card
                       film={filmData}
-                      key={filmData.id}
-                      itemId={filmData.id}
+                      // key={filmData.id}
+                      // itemId={filmData.id}
                       genres={props.genres}
-                      id={`row${props.id}col${i}`}
+                      // id={`row${props.id}col${i}`}
                     />
                     <div className={styles.flex}>
                       <EmptyCard /> <EmptyCard /> <EmptyCard /> <EmptyCard />
