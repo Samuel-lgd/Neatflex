@@ -125,13 +125,13 @@ function PageFilm() {
                   <ImPlay3 />
                 </div>
               </div>
-              <div className={styles.more}>
+              {/* <div className={styles.more}>
                 <BsChevronDoubleDown
                   size={40}
                   color={"white"}
                   onClick={goToContent}
                 />
-              </div>
+              </div> */}
               <img
                 className={imgLoaded ? styles.imgFullscreen : styles.opacity}
                 src={` https://image.tmdb.org/t/p/original/${data.backdrop_path}`}

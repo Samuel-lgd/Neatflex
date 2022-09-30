@@ -11,6 +11,18 @@ body {
   /* #181a1b; */
 }
 
+@font-face {
+  font-family: "GothamBold";
+  src: url("fonts/GothamBold.ttf");
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "GothamBold";
+}
+
 .App {
   position: absolute;
   top: 0px;
