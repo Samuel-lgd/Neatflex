@@ -4,6 +4,17 @@ import EpisodeCard from "./episodeCard";
 
 function Episodes(props) {
   const [data, setData] = useState(null);
+  const [hideUnreleased, setHideUnreleased] = useState(false);
+
+  function getIsReleased(date) {
+    let releaseDate = new Date(date);
+    let today = Date.now();
+
+    if (releaseDate > today) {
+      return false;
+    }
+    return true;
+  }
 
   useEffect(() => {
     fetch(
@@ -22,6 +33,28 @@ function Episodes(props) {
       });
   }, [props.seasonId, props.filmId]);
 
+  function lastReleased(episode) {
+    return (
+      <EpisodeCard
+        episode={episode}
+        lastReleased={true}
+        handleHide={() => setHideUnreleased((prev) => !prev)}
+        hide={hideUnreleased}
+      />
+    );
+  }
+
+  function notLastReleased(episode) {
+    return (
+      <EpisodeCard
+        episode={episode}
+        lastReleased={false}
+        handleHide={() => setHideUnreleased((prev) => !prev)}
+        hide={hideUnreleased}
+      />
+    );
+  }
+
   return (
     <>
       {data ? (
@@ -30,9 +63,14 @@ function Episodes(props) {
             <h1>{data.name}'s episodes:</h1>
           </div>
           <div className={styles.episodes}>
-            {data.episodes.map((episode) => (
-              <EpisodeCard episode={episode} />
-            ))}
+            {data.episodes.map((episode, i) =>
+              i < data.episodes.length - 1
+                ? getIsReleased(episode.air_date) === true &&
+                  getIsReleased(data.episodes[i + 1].air_date) === false
+                  ? lastReleased(episode)
+                  : notLastReleased(episode)
+                : notLastReleased(episode)
+            )}
           </div>
         </>
       ) : null}

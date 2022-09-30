@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "./pageFilm.module.css";
 
-function EpisodeCard({ episode }) {
+function EpisodeCard({ episode, lastReleased, hide, handleHide }) {
   const [isReleased, setIsReleased] = useState(getIsReleased(episode.air_date));
 
   function getIsReleased(date) {
@@ -41,8 +41,18 @@ function EpisodeCard({ episode }) {
 
   return (
     <>
-      <hr></hr>
-      <div className={styles.saisonCard}>
+      <div
+        className={
+          hide && !isReleased
+            ? `${styles.saisonCardHidden} ${styles.saisonCard}`
+            : styles.saisonCard
+        }
+      >
+        {lastReleased ? (
+          <div onClick={handleHide} className={styles.btnHideUnreleased}>
+            {hide ? "Show unreleased episodes" : "Hide unreleased episodes"}
+          </div>
+        ) : null}
         {isReleased ? (
           <>
             <div className={styles.left}>
@@ -65,16 +75,21 @@ function EpisodeCard({ episode }) {
           </>
         ) : (
           <>
-            <h3 style={{ textAlign: "center" }}>
-              Episode {episode.episode_number} will be released on{" "}
-              {showDate(episode.air_date)}{" "}
-            </h3>
+            <div className={styles.left}>
+              <div className={styles.imgPlaceholder}></div>
+              <h2>
+                Episode {episode.episode_number} will be released on{" "}
+                {showDate(episode.air_date)}{" "}
+              </h2>
+            </div>
+
             <div className={styles.right}>
               <p>{calcRuntime(episode.runtime)}</p>
             </div>
           </>
         )}
       </div>
+      {!isReleased && hide ? null : <hr></hr>}
     </>
   );
 }
