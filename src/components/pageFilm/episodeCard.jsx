@@ -77,14 +77,9 @@ function EpisodeCard({ episode, lastReleased, hide, handleHide }) {
           <>
             <div className={styles.left}>
               <div className={styles.imgPlaceholder}></div>
-              <h2>
-                Episode {episode.episode_number} will be released on{" "}
-                {showDate(episode.air_date)}{" "}
+              <h2 className={styles.center}>
+                {episode.name} will be released on {showDate(episode.air_date)}{" "}
               </h2>
-            </div>
-
-            <div className={styles.right}>
-              <p>{calcRuntime(episode.runtime)}</p>
             </div>
           </>
         )}

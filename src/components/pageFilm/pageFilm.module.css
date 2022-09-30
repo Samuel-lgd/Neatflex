@@ -167,8 +167,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100px;
-  /* transition: 1s; */
 }
 
 .saisonCardHidden {
@@ -258,21 +256,27 @@ hr {
   background-color: #111111;
 }
 
-@media screen and (max-width: 500px) {
-  .saisonCard img {
-    display: none;
-  }
-
-  .saisonCard .imgPlaceHolder {
-    display: none;
-  }
-}
-
 @media screen and (max-width: 600px) {
   .right {
     display: none;
   }
+
+  .imgPlaceholder {
+    display: none;
+  }
+
   .left {
     width: 100vw;
+  }
+
+  .center {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .saisonCard img {
+    display: none;
   }
 }
