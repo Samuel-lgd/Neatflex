@@ -237,6 +237,7 @@
 }
 
 .results {
+  padding-bottom: 5px;
   box-sizing: border-box;
   justify-content: center;
   display: flex;
@@ -245,7 +246,7 @@
   width: 100vw;
   left: 0px;
   top: 70px;
-  max-height: 230px;
+  max-height: 300px;
   background-color: #181a1b;
   overflow: hidden;
   transition: 500ms;
@@ -253,22 +254,19 @@
 }
 
 .resultsHidden {
+  padding: 0px;
   max-height: 0px;
   transition: 500ms;
 }
 
 .resultCard {
-  flex: 1 0 max-content;
+  display: flex;
   margin: 10px;
-  height: 50px;
-  background-color: rgba(255, 255, 255, 0.05);
-  border-radius: 5px;
-  padding: 3px 10px;
+  height: 125px;
+  width: 300px;
+  background-color: rgba(255, 255, 255, 0.066);
+  border-radius: 10px;
   overflow: hidden;
-}
-
-.resultCard:hover {
-  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .resultCard h2 {
@@ -280,9 +278,58 @@
   margin: 2.5vh 0px;
 }
 
+.searchImg {
+}
+
+.searchInfos {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 3px 10px 10px 10px;
+}
+.searchInfos h3 {
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
 .spaceBetween {
   display: flex;
+  gap: 5px;
   justify-content: space-between;
+}
+
+.searchButton {
+  margin-top: 2px;
+  color: white;
+  padding: 7px 0px;
+  border-radius: 7px;
+  font-weight: 600;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.271);
+  width: 100%;
+}
+
+.searchButton span {
+  position: relative;
+  margin: 0px 5px;
+  bottom: 1px;
+  transition: 300ms;
+}
+
+.searchButton:hover {
+  background-color: rgba(169, 169, 169, 0.271);
+  cursor: pointer;
+}
+
+.searchIcon {
+  position: relative;
+  top: 2px;
+  transition: 200ms;
 }
 
 .rating {
@@ -323,7 +370,7 @@
     position: absolute;
     left: 50%;
     transform: translate(-50%, 0);
-    top: 60px;
+    top: 65px;
   }
   .bgGradient {
     height: 115px;
@@ -334,5 +381,13 @@
 
   .searchInputFocused {
     width: 75vw;
+  }
+
+  .resultCard {
+    width: 100%;
+  }
+  .results {
+    padding: 0px 10px;
+    max-height: 580px;
   }
 }
