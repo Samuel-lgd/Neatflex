@@ -6,6 +6,7 @@ import CardList from "../card/cardList";
 import Episode from "./episode";
 import Header from "./header";
 import styles from "./pageFilm.module.css";
+import AddListBtn from "../card/addListBtn";
 
 function PageFilm() {
   const [data, setData] = useState();
