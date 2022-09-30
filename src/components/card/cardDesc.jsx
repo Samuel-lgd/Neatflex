@@ -25,7 +25,7 @@ function CardDesc(props) {
           Score: {props.film.vote_average.toFixed(1) * 10}%
         </p>
         <div style={{ display: "flex", gap: "10px" }}>
-          <LikeBtn isLiked={false} />
+          {/* <LikeBtn isLiked={false} /> */}
           <AddListBtn filmId={props.film.id} />
         </div>
       </div>

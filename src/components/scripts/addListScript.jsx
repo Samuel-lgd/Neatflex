@@ -30,6 +30,8 @@ function useIsFilmAdded(filmId) {
 function addFilm(isAdded, filmId) {
   const data = window.localStorage.getItem("USER_LIST");
   const userList = JSON.parse(data);
+
+  //suppréssion si déjà ajouté
   if (isAdded) {
     userList.map((item, key) => {
       if (item === filmId) {
@@ -37,7 +39,10 @@ function addFilm(isAdded, filmId) {
       }
     });
   } else {
-    userList.push(filmId);
+    //ajout dans local storage si pas déja fait par un autre bouton
+    if (!userList.includes(filmId)) {
+      userList.push(filmId);
+    }
   }
   isAdded = !isAdded;
   window.localStorage.setItem("USER_LIST", JSON.stringify(userList));

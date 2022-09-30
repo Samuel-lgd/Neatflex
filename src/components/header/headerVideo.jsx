@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { HiPlus } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import styles from "./header.module.css";
+import AddListBtn from "../header/addListBtn";
 
 function HeaderVideo(props) {
   const [data, setData] = useState(null);
@@ -34,11 +34,16 @@ function HeaderVideo(props) {
 
   return (
     <>
-      {data ? (
+      {true ? (
         <>
           <div className={styles.filmContent}>
-            <div className={styles.bigTitle}>{data.name}</div>
-            <div className={styles.filmDesc}>{data.tagline}</div>
+            {data ? (
+              <>
+                <div className={styles.bigTitle}>{data.name}</div>
+                <div className={styles.filmDesc}>{data.tagline}</div>
+              </>
+            ) : null}
+
             <div className={styles.buttons}>
               <Link
                 style={{ textDecoration: "none", color: "black" }}
@@ -46,17 +51,16 @@ function HeaderVideo(props) {
               >
                 <div className={styles.button}>Show more</div>
               </Link>
-              <div className={styles.buttonAddList}>
-                <HiPlus size={35} color="white" />
-                <p> My list</p>
-              </div>
+              {AddListBtn(props.filmId)}
             </div>
           </div>
-          <img
-            className={imgLoaded ? styles.imgFullscreen : styles.opacity}
-            src={` https://image.tmdb.org/t/p/original/${data.backdrop_path}`}
-            onLoad={handleLoad}
-          ></img>
+          {data ? (
+            <img
+              className={imgLoaded ? styles.imgFullscreen : styles.opacity}
+              src={` https://image.tmdb.org/t/p/original/${data.backdrop_path}`}
+              onLoad={handleLoad}
+            ></img>
+          ) : null}
         </>
       ) : null}
       <div className={styles.bottomGradient}></div>

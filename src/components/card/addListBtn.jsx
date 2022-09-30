@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useIsFilmAdded, addFilm } from "./addListScript";
+import { useIsFilmAdded, addFilm } from "../scripts/addListScript";
 import { MdAdd, MdOutlineDone } from "react-icons/md";
 import styles from "./card.module.css";
 
