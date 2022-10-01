@@ -13,9 +13,7 @@ function Genres(props) {
     )
       .then((response) => {
         if (!response.ok) {
-          throw new Error(
-            `This is an HTTP error: The status is ${response.status}`
-          );
+          throw new Error(`HTTP error: The status is ${response.status}`);
         }
         return response.json();
       })
@@ -30,9 +28,7 @@ function Genres(props) {
     )
       .then((response) => {
         if (!response.ok) {
-          throw new Error(
-            `This is an HTTP error: The status is ${response.status}`
-          );
+          throw new Error(`HTTP error: The status is ${response.status}`);
         }
         return response.json();
       })

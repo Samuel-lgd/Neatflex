@@ -38,32 +38,6 @@
   z-index: 1;
 }
 
-.more {
-  width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  top: 55vh;
-  left: 0px;
-  z-index: 1;
-  flex-direction: column;
-}
-.more svg {
-  background-color: #000000b7;
-  padding: 15px;
-  border-radius: 25px;
-  transition: 300ms;
-  cursor: pointer;
-}
-
-.more svg:hover {
-  scale: 1.1;
-  opacity: 0.9;
-  padding: 15px;
-  border-radius: 25px;
-}
-
 .button {
   background-color: white;
   height: 50px;
@@ -78,6 +52,11 @@
   font-weight: 700;
   font-size: 1.2rem;
   transition: 300ms;
+}
+
+.buttons {
+  display: flex;
+  gap: 25px;
 }
 
 .scrollToMe {

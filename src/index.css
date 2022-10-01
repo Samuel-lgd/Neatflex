@@ -11,14 +11,18 @@ body {
   /* #181a1b; */
 }
 
-p {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+@font-face {
+  font-family: "GothamLight";
+  src: url("fonts/GothamLight.ttf");
 }
+
 @font-face {
   font-family: "GothamBold";
   src: url("fonts/GothamBold.ttf");
+}
+
+p {
+  font-family: "GothamLight";
 }
 
 div,
@@ -40,9 +44,8 @@ h4 {
 }
 
 button {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "GothamLight";
+  font-weight: 800;
   font-size: 1rem;
 }
 
@@ -63,7 +66,7 @@ p {
 
 h2 {
   font-size: 1.3rem;
-  margin-bottom: 3px;
+  margin-bottom: 5px;
   line-height: 28px;
 }
 

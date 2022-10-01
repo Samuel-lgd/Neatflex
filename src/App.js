@@ -1,16 +1,20 @@
 import Home from "./components/home";
-import { Route, Routes, useParams, useLocation } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import Header from "./components/header/header";
 import HeaderVideo from "./components/header/headerVideo";
 import Footer from "./components/footer/footer";
-import useWindowDimensions from "./components/windowsSize";
-import { useTransition, a } from "@react-spring/web";
 import Genres from "./components/genres";
 import PageFilm from "./components/pageFilm/pageFilm";
+import useGetData from "./components/scripts/fetchData";
 
 function App() {
   const [data, setData] = useState(null);
+  // const [testData, setTestData] = useState(useGetData("movieLink", 66732));
+
+  // useEffect(() => {
+  //   console.log(testData);
+  // }, [testData]);
 
   useEffect(() => {
     fetch(
@@ -18,9 +22,7 @@ function App() {
     )
       .then((response) => {
         if (!response.ok) {
-          throw new Error(
-            `This is an HTTP error: The status is ${response.status}`
-          );
+          throw new Error(`HTTP error: The status is ${response.status}`);
         }
         return response.json();
       })

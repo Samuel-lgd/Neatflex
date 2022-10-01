@@ -6,7 +6,7 @@ import CardList from "../card/cardList";
 import Episode from "./episode";
 import Header from "./header";
 import styles from "./pageFilm.module.css";
-import AddListBtn from "../card/addListBtn";
+import AddListBtn from "../header/addListBtn";
 
 function PageFilm() {
   const [data, setData] = useState();
@@ -24,15 +24,14 @@ function PageFilm() {
     setselectedSeason(e);
   }
 
+  //Get film
   useEffect(() => {
     fetch(
       `https://api.themoviedb.org/3/tv/${id}?api_key=17117ab9c18276d48d8634390c025df4&language=en-US`
     )
       .then((response) => {
         if (!response.ok) {
-          throw new Error(
-            `This is an HTTP error: The status is ${response.status}`
-          );
+          throw new Error(`HTTP error: The status is ${response.status}`);
         }
         return response.json();
       })
@@ -41,6 +40,7 @@ function PageFilm() {
       });
   }, [location]);
 
+  //Affichage du menu du film
   useEffect(() => {
     const handleScroll = (event) => {
       if (
@@ -60,15 +60,14 @@ function PageFilm() {
     };
   }, [location]);
 
+  //Get recommendations
   useEffect(() => {
     fetch(
       `https://api.themoviedb.org/3/tv/${id}/recommendations?api_key=17117ab9c18276d48d8634390c025df4&language=en-US&page=1`
     )
       .then((response) => {
         if (!response.ok) {
-          throw new Error(
-            `This is an HTTP error: The status is ${response.status}`
-          );
+          throw new Error(`HTTP error: The status is ${response.status}`);
         }
         return response.json();
       })
@@ -77,15 +76,14 @@ function PageFilm() {
       });
   }, [location]);
 
+  //Get genres
   useEffect(() => {
     fetch(
       `https://api.themoviedb.org/3/genre/tv/list?api_key=17117ab9c18276d48d8634390c025df4&language=en-US`
     )
       .then((response) => {
         if (!response.ok) {
-          throw new Error(
-            `This is an HTTP error: The status is ${response.status}`
-          );
+          throw new Error(`HTTP error: The status is ${response.status}`);
         }
         return response.json();
       })
@@ -93,6 +91,7 @@ function PageFilm() {
         setGenres(genres.genres);
       });
   }, []);
+
   function handleLoad() {
     setImgLoaded(true);
   }
@@ -115,29 +114,27 @@ function PageFilm() {
     <>
       <div className={styles.container}>
         <>
-          {data ? (
-            <>
-              <div className={styles.filmContent}>
+          <div className={styles.filmContent}>
+            {data ? (
+              <>
                 <div className={styles.bigTitle}>{data.name}</div>
                 <div className={styles.filmDesc}>{data.overview}</div>
-                <div className={styles.button} ref={refHeight}>
-                  Watch &nbsp;&nbsp;
-                  <ImPlay3 />
-                </div>
+              </>
+            ) : null}
+            <div className={styles.buttons}>
+              <div className={styles.button} ref={refHeight}>
+                Watch &nbsp;&nbsp;
+                <ImPlay3 />
               </div>
-              {/* <div className={styles.more}>
-                <BsChevronDoubleDown
-                  size={40}
-                  color={"white"}
-                  onClick={goToContent}
-                />
-              </div> */}
-              <img
-                className={imgLoaded ? styles.imgFullscreen : styles.opacity}
-                src={` https://image.tmdb.org/t/p/original/${data.backdrop_path}`}
-                onLoad={handleLoad}
-              ></img>
-            </>
+              {AddListBtn(parseInt(id))}
+            </div>
+          </div>
+          {data ? (
+            <img
+              className={imgLoaded ? styles.imgFullscreen : styles.opacity}
+              src={` https://image.tmdb.org/t/p/original/${data.backdrop_path}`}
+              onLoad={handleLoad}
+            ></img>
           ) : null}
           <div className={styles.bottomGradient}></div>
           <div className={styles.bottomBg}></div>

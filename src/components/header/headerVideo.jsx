@@ -5,7 +5,6 @@ import AddListBtn from "../header/addListBtn";
 
 function HeaderVideo(props) {
   const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(false);
   const [imgLoaded, setImgLoaded] = useState(false);
 
   useEffect(() => {
@@ -14,17 +13,12 @@ function HeaderVideo(props) {
     )
       .then((response) => {
         if (!response.ok) {
-          throw new Error(
-            `This is an HTTP error: The status is ${response.status}`
-          );
+          throw new Error(`HTTP error: The status is ${response.status}`);
         }
         return response.json();
       })
       .then((actualData) => {
         setData(actualData);
-      })
-      .finally(() => {
-        setLoading(true);
       });
   }, []);
 

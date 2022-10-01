@@ -14,12 +14,12 @@ function AddListBtn(filmId) {
       {added ? (
         <>
           <HiCheck size={35} color="white" />
-          <p>Added !</p>
+          <>Added !</>
         </>
       ) : (
         <>
           <HiPlus size={35} color="white" />
-          <p>My list</p>
+          <>My list</>
         </>
       )}
     </div>
