@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/Neatflex/static/css/main.0187d9ca.css",
-    "main.js": "/Neatflex/static/js/main.ff44af4c.js",
+    "main.css": "/Neatflex/static/css/main.6941cafd.css",
+    "main.js": "/Neatflex/static/js/main.b12ef799.js",
+    "static/media/GothamLight.ttf": "/Neatflex/static/media/GothamLight.03e7ff609ba3bf798fa4.ttf",
     "static/media/GothamBold.ttf": "/Neatflex/static/media/GothamBold.0a910c0b9d50be6aa3dc.ttf",
     "static/media/neatflex.png": "/Neatflex/static/media/neatflex.79be1525c1fc7c2c49e4.png",
     "index.html": "/Neatflex/index.html",
-    "main.0187d9ca.css.map": "/Neatflex/static/css/main.0187d9ca.css.map",
-    "main.ff44af4c.js.map": "/Neatflex/static/js/main.ff44af4c.js.map"
+    "main.6941cafd.css.map": "/Neatflex/static/css/main.6941cafd.css.map",
+    "main.b12ef799.js.map": "/Neatflex/static/js/main.b12ef799.js.map"
   },
   "entrypoints": [
-    "static/css/main.0187d9ca.css",
-    "static/js/main.ff44af4c.js"
+    "static/css/main.6941cafd.css",
+    "static/js/main.b12ef799.js"
   ]
 }
