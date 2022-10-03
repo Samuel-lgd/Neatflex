@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+
 import api from "../apiData.json";
 import CardList from "./card/cardList";
 
@@ -85,10 +86,12 @@ function Home(props) {
       {data ? (
         <div className="content">
           {userList && userListData ? (
+            //Liste des titres fav de l'utilisateur
             <CardList titre="My list" data={userListData} genres={genres} />
           ) : null}
 
           {api.categories.map((x, i) => (
+            //Liste des catégories prédéfinies
             <CardList titre={x.name} key={i} data={data[i]} genres={genres} />
           ))}
         </div>

@@ -36,7 +36,10 @@
 }
 
 .cardTruc {
-  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(36, 36, 36);
   height: var(--cardHeight);
   margin: 14px;
   margin-top: 28px;

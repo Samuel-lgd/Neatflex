@@ -12,12 +12,12 @@ body {
 }
 
 @font-face {
-  font-family: -apple-system, "GothamLight";
+  font-family: "GothamLight";
   src: url("fonts/GothamLight.ttf");
 }
 
 @font-face {
-  font-family: -apple-system, "GothamBold";
+  font-family: "GothamBold";
   src: url("fonts/GothamBold.ttf");
 }
 

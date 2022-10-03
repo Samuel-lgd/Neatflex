@@ -4,8 +4,7 @@ import styles from "./card.module.css";
 function EmptyCard() {
   return (
     <div className={styles.cardTruc}>
-      <p>data</p>
-      <h1>AA</h1>
+      <p>Loading...</p>
     </div>
   );
 }
