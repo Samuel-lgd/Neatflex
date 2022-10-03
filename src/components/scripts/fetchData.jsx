@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 
+//UNUSED -- DONT WORK
+
 async function fetchData(link) {
   console.log("fetching data ...");
   const response = await fetch(link);

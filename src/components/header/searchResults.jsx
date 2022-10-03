@@ -4,10 +4,12 @@ import styles from "./header.module.css";
 import { MdAdd, MdOutlineDone } from "react-icons/md";
 import AddListBtn from "./addListBtn";
 import { BiRightArrowAlt } from "react-icons/bi";
-import { useIsFilmAdded, addFilm } from "../scripts/addListScript";
+import { useIsDataAdded, addFilm } from "../scripts/addToLocalstorageScript";
 
 function SearchResults(props) {
-  const [added, setAdded] = useState(useIsFilmAdded(props.film.id));
+  const [added, setAdded] = useState(
+    useIsDataAdded(props.film.id, "USER_LIST")
+  );
 
   return (
     <>
@@ -32,7 +34,9 @@ function SearchResults(props) {
             <div className={styles.spaceBetween}>
               <div
                 className={styles.searchButton}
-                onClick={() => setAdded(addFilm(added, props.film.id))}
+                onClick={() =>
+                  setAdded(addFilm(added, props.film.id, "USER_LIST"))
+                }
               >
                 {added ? (
                   <MdOutlineDone className={styles.searchIcon} />

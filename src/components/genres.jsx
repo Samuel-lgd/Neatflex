@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from "react";
 import Card from "./card/card";
 import styles from "./genres.module.css";
+import GenreBtn from "./genreBtn";
+import emptyCard from "./card/emptyCard";
+import EmptyCard from "./card/emptyCard";
 
-function Genres(props) {
+function Genres() {
   const [data, setData] = useState(null);
   const [genres, setGenres] = useState(null);
   const [genreTitle, setGenreTitle] = useState(null);
+  const [actualId, setActualId] = useState(null);
 
   useEffect(() => {
     fetch(
@@ -38,9 +42,11 @@ function Genres(props) {
       });
   }
 
-  function genreClick(e) {
-    getData(e.target.value);
-    setGenreTitle(e.target.innerText);
+  function genreClick(id, name) {
+    setData(null);
+    setActualId(id);
+    getData(id);
+    setGenreTitle(name);
   }
 
   return (
@@ -49,24 +55,41 @@ function Genres(props) {
         <div className={styles.genreList}>
           {genres
             ? genres.map((genre) => (
-                <button value={genre.id} onClick={genreClick}>
-                  {genre.name}
-                </button>
+                <GenreBtn id={genre.id} name={genre.name} click={genreClick} />
+                // <button value={genre.id} onClick={genreClick}>
+                //   {genre.name}
+                // </button>
               ))
             : null}
         </div>
         <h1 className={styles.genreTitle}>{genreTitle}</h1>
         <div className={styles.cardListGenres}>
-          {data && genres
-            ? data.results.map((filmData, i) => (
-                <Card film={filmData} genres={genres} />
-              ))
-            : null}
+          {data && genres ? (
+            data.results.map((filmData, i) => (
+              <Card film={filmData} genres={genres} />
+            ))
+          ) : actualId ? (
+            <>
+              <EmptyCard />
+              <EmptyCard />
+              <EmptyCard />
+              <EmptyCard />
+              <EmptyCard />
+              <EmptyCard />
+              <EmptyCard />
+              <EmptyCard />
+              <EmptyCard />
+              <EmptyCard />
+              <EmptyCard />
+              <EmptyCard />
+              <EmptyCard />
+              <EmptyCard />
+              <EmptyCard />
+            </>
+          ) : null}
         </div>
       </div>
     </div>
-    // filter  https://api.themoviedb.org/3/discover/tv?api_key=17117ab9c18276d48d8634390c025df4&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&vote_average.gte=6&with_genres=18
-    // genre List https://api.themoviedb.org/3/genre/tv/list?api_key=17117ab9c18276d48d8634390c025df4&language=en-US
   );
 }
 

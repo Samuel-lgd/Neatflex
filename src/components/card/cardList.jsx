@@ -50,13 +50,12 @@ function CardList(props) {
         <h1 className="margin listHeader">{props.titre}</h1>
         <div className={isMobile ? styles.cardListMobile : styles.cardList}>
           <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow}>
+            {/* {console.log(props.data)} */}
             {props.data && props.genres ? (
               props.data.results.map((filmData, i) => (
                 <>
                   <Card film={filmData} genres={props.genres} />
-                  <div className={styles.flex}>
-                    {/* <EmptyCard /> <EmptyCard /> <EmptyCard /> <EmptyCard /> */}
-                  </div>
+                  <div className={styles.flex}></div>
                 </>
               ))
             ) : (

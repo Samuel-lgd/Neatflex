@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { HiPlus, HiCheck } from "react-icons/hi";
 import styles from "./header.module.css";
-import { useIsFilmAdded, addFilm } from "../scripts/addListScript";
+import { useIsDataAdded, addFilm } from "../scripts/addToLocalstorageScript";
 
 function AddListBtn(filmId) {
-  const [added, setAdded] = useState(useIsFilmAdded(filmId));
+  const [added, setAdded] = useState(useIsDataAdded(filmId, "USER_LIST"));
 
   return (
     <div
       className={styles.buttonAddList}
-      onClick={() => setAdded(addFilm(added, filmId))}
+      onClick={() => setAdded(addFilm(added, filmId, "USER_LIST"))}
     >
       {added ? (
         <>
