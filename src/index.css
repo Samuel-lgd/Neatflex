@@ -12,17 +12,17 @@ body {
 }
 
 @font-face {
-  font-family: "GothamLight";
+  font-family: -apple-system, "GothamLight";
   src: url("fonts/GothamLight.ttf");
 }
 
 @font-face {
-  font-family: "GothamBold";
+  font-family: -apple-system, "GothamBold";
   src: url("fonts/GothamBold.ttf");
 }
 
 p {
-  font-family: "GothamLight";
+  font-family: -apple-system, "GothamLight";
 }
 
 div,
@@ -30,7 +30,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: "GothamBold";
+  font-family: -apple-system, "GothamBold";
 }
 
 .App {
