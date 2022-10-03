@@ -44,14 +44,14 @@ h4 {
 }
 
 button {
-  font-family: "GothamLight";
+  font-family: -apple-system, "GothamLight";
   font-weight: 800;
   font-size: 1rem;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: -apple-system, source-code-pro, Menlo, Monaco, Consolas,
+    "Courier New", monospace;
 }
 
 h5,
