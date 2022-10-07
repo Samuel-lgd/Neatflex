@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import styles from "./genres.module.css";
 import { useIsDataAdded, addFilm } from "./scripts/addToLocalstorageScript";
-import { AiFillStar, AiOutlineStar } from "react-icons/ai";
+import FavBtn from "./favBtn";
 
 function GenreBtn(props) {
-  const [added, setAdded] = useState(useIsDataAdded(props.id, "USER_GENRES"));
-
   return (
     <div className={styles.container}>
       <div
@@ -14,18 +12,7 @@ function GenreBtn(props) {
       >
         {props.name}
       </div>
-      <div
-        className={styles.iconBtn}
-        onClick={() => setAdded(addFilm(added, props.id, "USER_GENRES"))}
-      >
-        <span>
-          {added ? (
-            <AiFillStar size={23} color={"white"} />
-          ) : (
-            <AiOutlineStar size={23} color={"white"} />
-          )}
-        </span>
-      </div>
+      <FavBtn id={props.id} bg={true} />
     </div>
   );
 }

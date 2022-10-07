@@ -57,7 +57,6 @@ function Home(props) {
   }
 
   //get data userList
-
   function getTitle(index) {
     let name = "";
     genres.map((genre) =>
@@ -143,7 +142,12 @@ function Home(props) {
           <>
             {userGenresData.map((genre, i) => (
               <>
-                <CardList titre={getTitle(i)} data={genre} genres={genres} />
+                <CardList
+                  titre={getTitle(i)}
+                  data={genre}
+                  genres={genres}
+                  genreId={userGenres[i]}
+                />
               </>
             ))}
           </>

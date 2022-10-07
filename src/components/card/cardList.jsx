@@ -6,6 +6,7 @@ import arrow from "./arrow.module.css";
 import Card from "./card";
 import styles from "./card.module.css";
 import EmptyCard from "./emptyCard";
+import FavBtn from "../favBtn";
 
 function CardList(props) {
   function RightArrow() {
@@ -47,7 +48,10 @@ function CardList(props) {
   return (
     <>
       <div className="cardListContainer">
-        <h1 className="margin listHeader">{props.titre}</h1>
+        <h1 className="margin listHeader">
+          {props.titre} <p>&nbsp;</p>
+          {props.genreId ? <FavBtn id={props.genreId} bg={null} /> : null}
+        </h1>
         <div className={isMobile ? styles.cardListMobile : styles.cardList}>
           <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow}>
             {/* {console.log(props.data)} */}

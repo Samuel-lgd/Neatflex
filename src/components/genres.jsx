@@ -56,9 +56,6 @@ function Genres() {
           {genres
             ? genres.map((genre) => (
                 <GenreBtn id={genre.id} name={genre.name} click={genreClick} />
-                // <button value={genre.id} onClick={genreClick}>
-                //   {genre.name}
-                // </button>
               ))
             : null}
         </div>

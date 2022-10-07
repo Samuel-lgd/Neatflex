@@ -7,8 +7,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #181a1b;
   scroll-behavior: smooth;
-  /* overflow-x: hidden; */
-  /* #181a1b; */
 }
 
 @font-face {

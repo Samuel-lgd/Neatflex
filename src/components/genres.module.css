@@ -14,10 +14,10 @@
 .iconBtn {
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 0px 8px;
   height: 40px;
   border-radius: 0px 5px 5px 0px;
-  background-color: #0000005f;
 }
 
 .iconBtn span {
@@ -43,17 +43,9 @@
   border: 0px;
 }
 
-/* .button::after {
-  position: relative;
-  left: 10px;
-  content: "";
-  height: 38px;
-  border: 1px solid rgba(0, 0, 0, 0.324);
-} */
-
 .button:hover,
 .iconBtn:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
 .button:active {
