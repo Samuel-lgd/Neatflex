@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from "react";
 import api from "../apiData.json";
 import CardList from "./card/cardList";
+import useFetchData from "./scripts/fetchData";
 
 function Home(props) {
-  const [genres, setGenres] = useState(null);
+  // const [genres, setGenres] = useState(null);
   const [data, setData] = useState(null);
   const [userListData, setUserListData] = useState(null);
   const [userList, setUserList] = useState(getLocalStorage("USER_LIST"));
   const [userGenresData, setUserGenresData] = useState(null);
   const [userGenres, setUserGenres] = useState(getLocalStorage("USER_GENRES"));
+
+  const genres = useFetchData("genres").genres;
 
   function getLocalStorage(name) {
     const data = window.localStorage.getItem(name);
@@ -19,32 +22,11 @@ function Home(props) {
     }
   }
 
-  //get genres list
-  useEffect(() => {
-    fetch(
-      `https://api.themoviedb.org/3/genre/tv/list?api_key=17117ab9c18276d48d8634390c025df4&language=en-US`
-    )
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`HTTP error: The status is ${response.status}`);
-        }
-        return response.json();
-      })
-      .then((genres) => {
-        setGenres(genres.genres);
-      });
-  }, []);
-
   function getData() {
     let allData = [];
     api.categories.map((x) =>
       fetch(x.link)
         .then((response) => {
-          if (!response.ok) {
-            throw new Error(
-              `This is an HTTP error: The status is ${response.status}`
-            );
-          }
           return response.json();
         })
         .then((actualData) => {
@@ -56,7 +38,7 @@ function Home(props) {
     );
   }
 
-  //get data userList
+  //Permet d'obtenir le nom d'une catégorie
   function getTitle(index) {
     let name = "";
     genres.map((genre) =>
