@@ -2,25 +2,12 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./header.module.css";
 import AddListBtn from "../header/addListBtn";
+import useFetchData from "../scripts/fetchData";
 
 function HeaderVideo(props) {
-  const [data, setData] = useState(null);
+  // const [data, setData] = useState(null);
   const [imgLoaded, setImgLoaded] = useState(false);
-
-  useEffect(() => {
-    fetch(
-      `https://api.themoviedb.org/3/tv/${props.filmId}?api_key=17117ab9c18276d48d8634390c025df4&language=en-US`
-    )
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`HTTP error: The status is ${response.status}`);
-        }
-        return response.json();
-      })
-      .then((actualData) => {
-        setData(actualData);
-      });
-  }, []);
+  const data = useFetchData("movies", props.filmId);
 
   function handleLoad() {
     setImgLoaded(true);

@@ -7,10 +7,9 @@ function Home(props) {
   // const [genres, setGenres] = useState(null);
   const [data, setData] = useState(null);
   const [userListData, setUserListData] = useState(null);
-  const [userList, setUserList] = useState(getLocalStorage("USER_LIST"));
   const [userGenresData, setUserGenresData] = useState(null);
-  const [userGenres, setUserGenres] = useState(getLocalStorage("USER_GENRES"));
-
+  const userList = getLocalStorage("USER_LIST");
+  const userGenres = getLocalStorage("USER_GENRES");
   const genres = useFetchData("genres").genres;
 
   function getLocalStorage(name) {
@@ -55,11 +54,6 @@ function Home(props) {
           `https://api.themoviedb.org/3/tv/${filmId}?api_key=17117ab9c18276d48d8634390c025df4&language=en-US`
         )
           .then((response) => {
-            if (!response.ok) {
-              throw new Error(
-                `This is an HTTP error: The status is ${response.status}`
-              );
-            }
             return response.json();
           })
           .then((actualData) => {
@@ -106,8 +100,6 @@ function Home(props) {
         {/* Affichage userlist */}
         {userList && userListData ? (
           <>
-            {/* {console.log("LIST", userListData)} */}
-
             <CardList titre="My list" data={userListData} genres={genres} />
           </>
         ) : null}

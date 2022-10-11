@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import styles from "./pageFilm.module.css";
 import EpisodeCard from "./episodeCard";
+import useFetchData from "../scripts/fetchData";
 
 function Episodes(props) {
-  const [data, setData] = useState(null);
+  // const [data, setData] = useState(null);
   const [hideUnreleased, setHideUnreleased] = useState(false);
+  const data = useFetchData("episodes", props.filmId, props.seasonId);
 
   function getIsReleased(date) {
     let releaseDate = new Date(date);
@@ -15,21 +17,6 @@ function Episodes(props) {
     }
     return true;
   }
-
-  useEffect(() => {
-    fetch(
-      `https://api.themoviedb.org/3/tv/${props.filmId}/season/${props.seasonId}?api_key=17117ab9c18276d48d8634390c025df4&language=en-US`
-    )
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`HTTP error: The status is ${response.status}`);
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setData(data);
-      });
-  }, [props.seasonId, props.filmId]);
 
   function lastReleased(episode) {
     return (

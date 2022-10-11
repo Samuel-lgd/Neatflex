@@ -2,29 +2,15 @@ import React, { useEffect, useState } from "react";
 import Card from "./card/card";
 import styles from "./genres.module.css";
 import GenreBtn from "./genreBtn";
-import emptyCard from "./card/emptyCard";
+import useFetchData from "./scripts/fetchData";
 import EmptyCard from "./card/emptyCard";
 
 function Genres() {
   const [data, setData] = useState(null);
-  const [genres, setGenres] = useState(null);
   const [genreTitle, setGenreTitle] = useState(null);
   const [actualId, setActualId] = useState(null);
 
-  useEffect(() => {
-    fetch(
-      `https://api.themoviedb.org/3/genre/tv/list?api_key=17117ab9c18276d48d8634390c025df4&language=en-US`
-    )
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`HTTP error: The status is ${response.status}`);
-        }
-        return response.json();
-      })
-      .then((actualData) => {
-        setGenres(actualData.genres);
-      });
-  }, []);
+  const genres = useFetchData("genres").genres;
 
   function getData(genreId) {
     fetch(

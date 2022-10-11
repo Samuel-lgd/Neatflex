@@ -7,38 +7,25 @@ import Episode from "./episode";
 import Header from "./header";
 import styles from "./pageFilm.module.css";
 import AddListBtn from "../header/addListBtn";
+import useFetchData from "../scripts/fetchData";
 
 function PageFilm() {
-  const [data, setData] = useState();
   const [imgLoaded, setImgLoaded] = useState();
   const [selectedSeason, setselectedSeason] = useState(1);
-  const [genres, setGenres] = useState(null);
   const [showHeader, setShowHeader] = useState(false);
-  const [reco, setReco] = useState();
   const refHeight = useRef();
   const refContent = useRef();
   let { id } = useParams();
   const location = useLocation();
 
+  //DATA
+  const data = useFetchData("movies", id);
+  const genres = useFetchData("genres").genres;
+  const reco = useFetchData("recomendations", id);
+
   function handleSelectedSeason(e) {
     setselectedSeason(e);
   }
-
-  //Get film
-  useEffect(() => {
-    fetch(
-      `https://api.themoviedb.org/3/tv/${id}?api_key=17117ab9c18276d48d8634390c025df4&language=en-US`
-    )
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`HTTP error: The status is ${response.status}`);
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setData(data);
-      });
-  }, [location]);
 
   //Affichage du menu du film
   useEffect(() => {
@@ -59,38 +46,6 @@ function PageFilm() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [location]);
-
-  //Get recommendations
-  useEffect(() => {
-    fetch(
-      `https://api.themoviedb.org/3/tv/${id}/recommendations?api_key=17117ab9c18276d48d8634390c025df4&language=en-US&page=1`
-    )
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`HTTP error: The status is ${response.status}`);
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setReco(data);
-      });
-  }, [location]);
-
-  //Get genres
-  useEffect(() => {
-    fetch(
-      `https://api.themoviedb.org/3/genre/tv/list?api_key=17117ab9c18276d48d8634390c025df4&language=en-US`
-    )
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`HTTP error: The status is ${response.status}`);
-        }
-        return response.json();
-      })
-      .then((genres) => {
-        setGenres(genres.genres);
-      });
-  }, []);
 
   function handleLoad() {
     setImgLoaded(true);

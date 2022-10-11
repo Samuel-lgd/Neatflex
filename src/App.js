@@ -6,15 +6,9 @@ import HeaderVideo from "./components/header/headerVideo";
 import Footer from "./components/footer/footer";
 import Genres from "./components/genres";
 import PageFilm from "./components/pageFilm/pageFilm";
-import useGetData from "./components/scripts/fetchData";
 
 function App() {
   const [data, setData] = useState(null);
-  // const [testData, setTestData] = useState(useGetData("movieLink", 66732));
-
-  // useEffect(() => {
-  //   console.log(testData);
-  // }, [testData]);
 
   useEffect(() => {
     fetch(
