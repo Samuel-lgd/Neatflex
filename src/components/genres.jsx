@@ -3,12 +3,11 @@ import Card from "./card/card";
 import styles from "./genres.module.css";
 import GenreBtn from "./genreBtn";
 import useFetchData from "./scripts/fetchData";
-import EmptyCard from "./card/emptyCard";
+import PageCards from "./pageCards";
 
 function Genres() {
   const [data, setData] = useState(null);
   const [genreTitle, setGenreTitle] = useState(null);
-  const [actualId, setActualId] = useState(null);
 
   const genres = useFetchData("genres").genres;
 
@@ -30,7 +29,6 @@ function Genres() {
 
   function genreClick(id, name) {
     setData(null);
-    setActualId(id);
     getData(id);
     setGenreTitle(name);
   }
@@ -45,32 +43,9 @@ function Genres() {
               ))
             : null}
         </div>
-        <h1 className={styles.genreTitle}>{genreTitle}</h1>
-        <div className={styles.cardListGenres}>
-          {data && genres ? (
-            data.results.map((filmData, i) => (
-              <Card film={filmData} genres={genres} />
-            ))
-          ) : actualId ? (
-            <>
-              <EmptyCard />
-              <EmptyCard />
-              <EmptyCard />
-              <EmptyCard />
-              <EmptyCard />
-              <EmptyCard />
-              <EmptyCard />
-              <EmptyCard />
-              <EmptyCard />
-              <EmptyCard />
-              <EmptyCard />
-              <EmptyCard />
-              <EmptyCard />
-              <EmptyCard />
-              <EmptyCard />
-            </>
-          ) : null}
-        </div>
+        {data && genres ? (
+          <PageCards data={data} genres={genres} title={genreTitle} />
+        ) : null}
       </div>
     </div>
   );

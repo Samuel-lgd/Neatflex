@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { isMobile } from "react-device-detect";
 import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
@@ -48,10 +49,23 @@ function CardList(props) {
   return (
     <>
       <div className="cardListContainer">
-        <h1 className="margin listHeader">
-          {props.titre} <p>&nbsp;</p>
-          {props.genreId ? <FavBtn id={props.genreId} bg={null} /> : null}
-        </h1>
+        <Link
+          style={{ textDecoration: "none" }}
+          to="/data"
+          state={{
+            title: props.titre,
+            data: props.data,
+            genres: props.genres,
+            genreId: props.genreId,
+          }}
+        >
+          <h1 className="margin listHeader">
+            {props.titre}
+            <p>Show more</p>
+            {/* <p>&nbsp;</p>
+            {props.genreId ? <FavBtn id={props.genreId} bg={null} /> : null} */}
+          </h1>
+        </Link>
         <div className={isMobile ? styles.cardListMobile : styles.cardList}>
           <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow}>
             {/* {console.log(props.data)} */}

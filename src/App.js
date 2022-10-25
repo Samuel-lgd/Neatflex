@@ -6,10 +6,12 @@ import HeaderVideo from "./components/header/headerVideo";
 import Footer from "./components/footer/footer";
 import Genres from "./components/genres";
 import PageFilm from "./components/pageFilm/pageFilm";
+import PageCards from "./components/pageCards";
 
 function App() {
   const [data, setData] = useState(null);
 
+  //On récup le film top 1 pour la page d'acceuil
   useEffect(() => {
     fetch(
       `https://api.themoviedb.org/3/trending/tv/week?api_key=17117ab9c18276d48d8634390c025df4`
@@ -42,6 +44,10 @@ function App() {
               }
             ></Route>
             <Route path="/genres" element={<Genres />}></Route>
+            <Route
+              path="/data"
+              element={<PageCards topMargin={true} />}
+            ></Route>
           </Routes>
           <Routes>
             <Route path="/film">

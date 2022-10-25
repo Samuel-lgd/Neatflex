@@ -105,12 +105,70 @@ h2 {
   background-color: #e50914;
 }
 
+/* Arrow */
+.listHeader::after {
+  --size: 9px;
+  --weight: 3px;
+  content: "";
+  display: block;
+  position: relative;
+  top: 4px;
+  left: -120px;
+  opacity: 0;
+  height: var(--size);
+  width: var(--size);
+  margin-left: 5px;
+  border-top: var(--weight) solid #e50914;
+  border-right: var(--weight) solid #e50914;
+  transform: rotate(45deg);
+  transition: 400ms;
+  /* transition-delay: 100ms; */
+}
+
+.cardListContainer:hover .listHeader::after {
+  left: -90px;
+  opacity: 1;
+}
+
+.listHeader:hover::after {
+  left: 10px !important;
+}
+
+.listHeader p {
+  position: relative;
+  top: 4px;
+  left: -20px;
+  opacity: 0;
+  font-size: 1rem;
+  color: #ffffffb5;
+  transition: 500ms;
+}
+
+.listHeader:hover p {
+  opacity: 1;
+  left: 10px;
+}
+
 .margin {
-  margin: 0px 4vw 0px 4vw;
+  margin: 0px 4vw;
+}
+
+.topMargin {
+  margin-top: 100px;
+}
+
+.sMargin {
+  margin: 0px 2vw;
 }
 
 .icon {
   size: "2em";
+}
+
+.allCards {
+  justify-content: space-around;
+  flex-wrap: wrap;
+  display: flex;
 }
 
 .react-horizontal-scrolling-menu--scroll-container::-webkit-scrollbar {
