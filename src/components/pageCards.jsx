@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "./card/card";
+import { isMobile } from "react-device-detect";
 import { useLocation } from "react-router-dom";
 import FavBtn from "./favBtn";
 
@@ -19,7 +20,7 @@ function PageCards({ data, genres, title, topMargin, genreId }) {
   }
 
   return (
-    <div className={topMargin ? "topMargin" : null}>
+    <div className={topMargin ? (isMobile ? "topMargin" : "topSMargin") : null}>
       <h1 className="sMargin listHeader">
         {title} <p>&nbsp;</p>
         {genreId ? <FavBtn id={genreId} bg={null} /> : null}

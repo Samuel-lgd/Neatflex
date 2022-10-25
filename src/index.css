@@ -154,6 +154,10 @@ h2 {
 }
 
 .topMargin {
+  margin-top: 200px;
+}
+
+.topSMargin {
   margin-top: 100px;
 }
 
