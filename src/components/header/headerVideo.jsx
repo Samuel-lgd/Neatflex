@@ -35,11 +35,17 @@ function HeaderVideo(props) {
           </div>
         </div>
         {data ? (
-          <img
-            className={imgLoaded ? styles.imgFullscreen : styles.opacity}
-            src={` https://image.tmdb.org/t/p/original/${data.backdrop_path}`}
-            onLoad={handleLoad}
-          ></img>
+          <>
+            <img
+              className={styles.imgBlur}
+              src={` https://image.tmdb.org/t/p/w300/${data.backdrop_path}`}
+            ></img>
+            <img
+              className={imgLoaded ? styles.imgFullscreen : styles.imgBlur}
+              src={` https://image.tmdb.org/t/p/original/${data.backdrop_path}`}
+              onLoad={handleLoad}
+            ></img>
+          </>
         ) : null}
       </>
       <div className={styles.bottomGradient}></div>

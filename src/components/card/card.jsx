@@ -57,7 +57,13 @@ function Card(props) {
                 className={
                   isHovering ? `${styles.img} ${styles.imgHover}` : styles.img
                 }
-                src={`https://image.tmdb.org/t/p/w780/${props.film.poster_path}`}
+                src={`https://image.tmdb.org/t/p/w500/${props.film.poster_path}`}
+              />
+              <img
+                className={
+                  isHovering ? `${styles.img} ${styles.imgHover}` : styles.img
+                }
+                src={`https://image.tmdb.org/t/p/w92/${props.film.poster_path}`}
               />
             </Link>
           </div>
