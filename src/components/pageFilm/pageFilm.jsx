@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { BsChevronDoubleDown } from "react-icons/bs";
+import { isMobile } from "react-device-detect";
 import { ImPlay3 } from "react-icons/im";
 import { useLocation, useParams } from "react-router-dom";
 import CardList from "../card/cardList";
@@ -92,11 +93,19 @@ function PageFilm() {
                 className={styles.imgBlur}
                 src={` https://image.tmdb.org/t/p/w300/${data.backdrop_path}`}
               ></img>
-              <img
-                className={imgLoaded ? styles.imgFullscreen : styles.imgBlur}
-                src={` https://image.tmdb.org/t/p/original/${data.backdrop_path}`}
-                onLoad={handleLoad}
-              ></img>
+              {isMobile ? (
+                <img
+                  className={imgLoaded ? styles.imgFullscreen : styles.imgBlur}
+                  src={` https://image.tmdb.org/t/p/w1280/${data.backdrop_path}`}
+                  onLoad={handleLoad}
+                ></img>
+              ) : (
+                <img
+                  className={imgLoaded ? styles.imgFullscreen : styles.imgBlur}
+                  src={` https://image.tmdb.org/t/p/original/${data.backdrop_path}`}
+                  onLoad={handleLoad}
+                ></img>
+              )}
             </>
           ) : null}
           <div className={styles.bottomGradient}></div>

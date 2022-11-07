@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { isMobile } from "react-device-detect";
 import styles from "./header.module.css";
 import AddListBtn from "../header/addListBtn";
 import useFetchData from "../scripts/fetchData";
@@ -40,11 +41,19 @@ function HeaderVideo(props) {
               className={styles.imgBlur}
               src={` https://image.tmdb.org/t/p/w300/${data.backdrop_path}`}
             ></img>
-            <img
-              className={imgLoaded ? styles.imgFullscreen : styles.imgBlur}
-              src={` https://image.tmdb.org/t/p/original/${data.backdrop_path}`}
-              onLoad={handleLoad}
-            ></img>
+            {isMobile ? (
+              <img
+                className={imgLoaded ? styles.imgFullscreen : styles.imgBlur}
+                src={` https://image.tmdb.org/t/p/w1280/${data.backdrop_path}`}
+                onLoad={handleLoad}
+              ></img>
+            ) : (
+              <img
+                className={imgLoaded ? styles.imgFullscreen : styles.imgBlur}
+                src={` https://image.tmdb.org/t/p/original/${data.backdrop_path}`}
+                onLoad={handleLoad}
+              ></img>
+            )}
           </>
         ) : null}
       </>

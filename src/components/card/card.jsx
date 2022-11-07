@@ -59,6 +59,7 @@ function Card(props) {
                 }
                 src={`https://image.tmdb.org/t/p/w500/${props.film.poster_path}`}
               />
+
               <img
                 className={
                   isHovering ? `${styles.img} ${styles.imgHover}` : styles.img
