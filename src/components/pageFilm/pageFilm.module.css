@@ -10,7 +10,7 @@
   position: absolute;
   top: 0px;
   left: 0px;
-  height: 87vh;
+  height: 97vh;
   object-fit: cover;
   opacity: 1;
   filter: blur(0px);
@@ -23,7 +23,7 @@
   position: absolute;
   top: 0px;
   left: 0px;
-  height: 87vh;
+  height: 97vh;
   object-fit: cover;
   filter: blur(5px);
 }
@@ -44,7 +44,7 @@
   top: 0px;
   left: 0px;
   width: 100%;
-  height: 80vh;
+  height: 87vh;
   z-index: 1;
 }
 
@@ -113,9 +113,9 @@
 
 .bottomGradient {
   position: absolute;
-  top: 53vh;
+  top: 63vh;
   left: 0px;
-  height: 30vh;
+  height: 35vh;
   width: 100vw;
   background: linear-gradient(
     0deg,
@@ -126,7 +126,7 @@
 
 .bottomBg {
   position: absolute;
-  top: 83vh;
+  top: 98vh;
   left: 0px;
   height: 18vh;
   width: 100vw;
@@ -136,15 +136,15 @@
 .content {
   position: relative;
   z-index: 3;
-  margin-top: 83vh;
+  margin-top: 88vh;
 }
 
 .headInfos {
-  margin: 20px 30px;
+  margin: 10px 30px;
 }
 
 .episodes {
-  margin-top: 25px;
+  margin-top: 0px;
   margin-bottom: 10px;
   text-align: justify;
 }
