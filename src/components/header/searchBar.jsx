@@ -3,12 +3,11 @@ import { ImSearch } from "react-icons/im";
 import { IoIosClose } from "react-icons/io";
 import styles from "./header.module.css";
 import { isMobile } from "react-device-detect";
-import SearchResults from "./searchResults";
 
 function SearchBar(props) {
   const [val, setVal] = useState("");
-  const [results, setResults] = useState(null);
-  const [showResults, setShowResults] = useState(false);
+  // const [props.results, props.handleRes] = useState(null);
+  // const [showResults, props.HandleSetShowRes] = useState(false);
   const [focused, setFocused] = useState(isMobile ? true : false);
 
   function handleChange(e) {
@@ -26,11 +25,13 @@ function SearchBar(props) {
           return response.json();
         })
         .then((actualData) => {
-          setResults(actualData.results);
+          props.handleRes(actualData.results);
         });
-      results ? setShowResults(true) : setShowResults(false);
+      props.results
+        ? props.HandleSetShowRes(true)
+        : props.HandleSetShowRes(false);
     } else {
-      setShowResults(false);
+      props.HandleSetShowRes(false);
     }
   }
 
@@ -41,15 +42,15 @@ function SearchBar(props) {
   function handleBlur() {
     isMobile ? setFocused(true) : setFocused(false);
     setVal("");
-    setShowResults(false);
+    props.HandleSetShowRes(false);
     props.handleBlur();
   }
 
   function isEmpty() {
     if (val.length === 0) {
       return true;
-    } else if (results) {
-      if (results.length === 0) {
+    } else if (props.results) {
+      if (props.results.length === 0) {
         return true;
       }
     }
@@ -79,23 +80,6 @@ function SearchBar(props) {
           <IoIosClose color="white" size={30} onClick={handleBlur} />
         </div>
       </div>
-      {showResults ? (
-        results.length === 0 ? (
-          <div className={styles.results}>
-            <div className={styles.noResults}>
-              <p>No matches.</p>
-            </div>
-          </div>
-        ) : (
-          <div className={styles.results}>
-            {results.slice(0, 12).map((film) => (
-              <SearchResults film={film} close={handleBlur} />
-            ))}
-          </div>
-        )
-      ) : (
-        <div className={`${styles.results} ${styles.resultsHidden}`}></div>
-      )}
     </>
   );
 }

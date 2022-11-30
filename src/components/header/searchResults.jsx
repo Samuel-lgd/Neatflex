@@ -48,8 +48,8 @@ function SearchResults(props) {
               <Link
                 className={styles.searchButton}
                 style={{ textDecoration: "none" }}
-                to={"/film/" + props.film.id}
                 onClick={props.close}
+                to={"/film/" + props.film.id}
               >
                 <span>More</span>
                 <BiRightArrowAlt className={styles.searchIcon} />

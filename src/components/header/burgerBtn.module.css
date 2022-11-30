@@ -1,0 +1,41 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.burger {
+  position: relative;
+  width: 25px;
+  height: 19px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 10px;
+  /* border-radius: 5px;
+  background-color: rgba(255, 254, 254, 0.108); */
+}
+
+.line {
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  transform-origin: left;
+  transform: rotate(0deg);
+  transition: all 300ms ease-out;
+}
+
+.rotateDown {
+  transform: rotate(45deg);
+}
+
+.rotateUp {
+  transform: rotate(-45deg);
+}
+
+.hide {
+  width: 0%;
+}
