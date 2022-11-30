@@ -12,6 +12,7 @@ function Header() {
   //RESULTS
   const [results, setResults] = useState(null);
   const [showResults, setShowResults] = useState(false);
+  const [focused, setFocused] = useState(false);
 
   const [searchFocus, setSearchFocus] = useState(false);
   const [open, setOpen] = useState(true);
@@ -57,6 +58,10 @@ function Header() {
     }
   }
 
+  function handleFocused(bool) {
+    setFocused(bool);
+  }
+
   function HandleSetShowRes(bool) {
     setShowResults(bool);
   }
@@ -68,7 +73,10 @@ function Header() {
   function handleBlur() {
     setSearchFocus(false);
     setShowResults(false);
+    setFocused(false);
   }
+
+  console.log(searchFocus);
 
   return (
     <>
@@ -114,6 +122,8 @@ function Header() {
               results={results}
               handleRes={handleRes}
               HandleSetShowRes={HandleSetShowRes}
+              handleFocused={handleFocused}
+              focused={focused}
             />
           ) : null}
 
@@ -135,6 +145,8 @@ function Header() {
               results={results}
               handleRes={handleRes}
               HandleSetShowRes={HandleSetShowRes}
+              handleFocused={handleFocused}
+              focused={focused}
             />
           </div>
         ) : null}

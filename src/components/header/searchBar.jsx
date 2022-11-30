@@ -5,7 +5,7 @@ import styles from "./header.module.css";
 
 function SearchBar(props) {
   const [val, setVal] = useState("");
-  const [focused, setFocused] = useState(false);
+  // const [props.focused, props.handleFocused] = useState(false);
 
   function handleChange(e) {
     setVal(e.target.value);
@@ -33,11 +33,11 @@ function SearchBar(props) {
   }
 
   function handleFocus() {
-    setFocused(true);
+    props.handleFocused(true);
     props.handleFocus();
   }
   function handleBlur() {
-    setFocused(false);
+    props.handleFocused(false);
     setVal("");
     props.HandleSetShowRes(false);
     props.handleBlur();
@@ -64,7 +64,7 @@ function SearchBar(props) {
           type="text"
           name="searchVal"
           className={
-            focused
+            props.focused
               ? `${styles.searchInput} ${styles.searchInputFocused}`
               : styles.searchInput
           }
@@ -73,7 +73,9 @@ function SearchBar(props) {
           onFocus={handleFocus}
           onBlur={isEmpty() ? handleBlur : null}
         />
-        <div className={focused ? styles.closeIcon : styles.closeIconHidden}>
+        <div
+          className={props.focused ? styles.closeIcon : styles.closeIconHidden}
+        >
           <IoIosClose color="white" size={30} onClick={handleBlur} />
         </div>
       </div>

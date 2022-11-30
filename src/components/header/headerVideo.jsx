@@ -6,7 +6,6 @@ import AddListBtn from "../header/addListBtn";
 import useFetchData from "../scripts/fetchData";
 
 function HeaderVideo(props) {
-  // const [data, setData] = useState(null);
   const [imgLoaded, setImgLoaded] = useState(false);
   const data = useFetchData("movies", props.filmId);
 

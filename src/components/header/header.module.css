@@ -439,6 +439,6 @@
     width: 60vw;
   }
   .results {
-    max-height: 100vh;
+    max-height: 585px;
   }
 }
