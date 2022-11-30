@@ -2,13 +2,10 @@ import React, { useState } from "react";
 import { ImSearch } from "react-icons/im";
 import { IoIosClose } from "react-icons/io";
 import styles from "./header.module.css";
-import { isMobile } from "react-device-detect";
 
 function SearchBar(props) {
   const [val, setVal] = useState("");
-  // const [props.results, props.handleRes] = useState(null);
-  // const [showResults, props.HandleSetShowRes] = useState(false);
-  const [focused, setFocused] = useState(isMobile ? true : false);
+  const [focused, setFocused] = useState(false);
 
   function handleChange(e) {
     setVal(e.target.value);
@@ -40,7 +37,7 @@ function SearchBar(props) {
     props.handleFocus();
   }
   function handleBlur() {
-    isMobile ? setFocused(true) : setFocused(false);
+    setFocused(false);
     setVal("");
     props.HandleSetShowRes(false);
     props.handleBlur();
