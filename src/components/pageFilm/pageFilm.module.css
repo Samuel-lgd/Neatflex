@@ -149,6 +149,10 @@
   text-align: justify;
 }
 
+.episodes h2 {
+  text-align: left;
+}
+
 .saisonCard {
   position: relative;
   margin-top: 10px;

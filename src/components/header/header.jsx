@@ -26,6 +26,13 @@ function Header() {
       .addEventListener("change", (e) => setMatches(e.matches));
   }, []);
 
+  //Permet de fermer le menu quand >600px et que le menu est ouvert
+  useEffect(() => {
+    if (matches) {
+      setOpen(true);
+    }
+  }, [matches]);
+
   useEffect(() => {
     const handleScroll = (event) => {
       setPageY(window.scrollY);
