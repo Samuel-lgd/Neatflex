@@ -45,7 +45,7 @@ function App() {
             ></Route>
             <Route path="/genres" element={<Genres />}></Route>
             <Route
-              path="/data"
+              path="/data/:title"
               element={<PageCards topMargin={true} />}
             ></Route>
           </Routes>

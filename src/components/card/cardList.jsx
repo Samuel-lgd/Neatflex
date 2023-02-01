@@ -7,7 +7,6 @@ import arrow from "./arrow.module.css";
 import Card from "./card";
 import styles from "./card.module.css";
 import EmptyCard from "./emptyCard";
-import FavBtn from "../favBtn";
 
 function CardList(props) {
   function RightArrow() {
@@ -51,29 +50,29 @@ function CardList(props) {
       <div className="cardListContainer">
         <Link
           style={{ textDecoration: "none" }}
-          to="/data"
+          to={`/data/${props.titre.toLowerCase()}`}
           state={{
             title: props.titre,
-            data: props.data,
-            genres: props.genres,
-            genreId: props.genreId,
+            data: props.data, // Liste des films
+            genres: props.genres, // Liste des genres
+            favGenre: props.favGenre, // id du genre favori || null
           }}
         >
-          <h1 className="margin listHeader">
+          <h1 className="margin cardListHeader">
             {props.titre}
             <p>Show more</p>
-            {/* <p>&nbsp;</p>
-            {props.genreId ? <FavBtn id={props.genreId} bg={null} /> : null} */}
           </h1>
         </Link>
         <div className={isMobile ? styles.cardListMobile : styles.cardList}>
           <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow}>
-            {/* {console.log(props.data)} */}
             {props.data && props.genres ? (
               props.data.results.map((filmData, i) => (
                 <>
-                  <Card film={filmData} genres={props.genres} />
-                  <div className={styles.flex}></div>
+                  <Card
+                    film={filmData}
+                    genres={props.genres}
+                    key={filmData.id}
+                  />
                 </>
               ))
             ) : (

@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./genres.module.css";
-import { useIsDataAdded, addFilm } from "./scripts/addToLocalstorageScript";
 import FavBtn from "./favBtn";
 
 function GenreBtn(props) {

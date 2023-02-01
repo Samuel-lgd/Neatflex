@@ -11,9 +11,9 @@ function Genres() {
 
   const genres = useFetchData("genres").genres;
 
-  function getData(genreId) {
+  function getData(favGenre) {
     fetch(
-      `https://api.themoviedb.org/3/discover/tv?api_key=17117ab9c18276d48d8634390c025df4&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&vote_average.gte=6&with_genres=${genreId}`
+      `https://api.themoviedb.org/3/discover/tv?api_key=17117ab9c18276d48d8634390c025df4&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&vote_average.gte=6&with_genres=${favGenre}`
     )
       .then((response) => {
         if (!response.ok) {

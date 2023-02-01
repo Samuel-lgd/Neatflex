@@ -120,7 +120,7 @@ function Home(props) {
                   titre={getTitle(i)}
                   data={genre}
                   genres={genres}
-                  genreId={userGenres[i]}
+                  favGenre={userGenres[i]}
                 />
               </>
             ))}

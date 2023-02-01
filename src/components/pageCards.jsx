@@ -4,7 +4,7 @@ import { isMobile } from "react-device-detect";
 import { useLocation } from "react-router-dom";
 import FavBtn from "./favBtn";
 
-function PageCards({ data, genres, title, topMargin, genreId }) {
+function PageCards({ data, genres, title, topMargin, favGenre }) {
   const location = useLocation();
 
   //On teste si de la data a été passée dans location
@@ -13,7 +13,7 @@ function PageCards({ data, genres, title, topMargin, genreId }) {
       data = location.state.data;
       genres = location.state.genres;
       title = location.state.title;
-      genreId = location.state.genreId;
+      favGenre = location.state.favGenre;
     } else {
       //Gérer le cas où il n'y a pas de data (quand on passe par l'url)
     }
@@ -21,9 +21,9 @@ function PageCards({ data, genres, title, topMargin, genreId }) {
 
   return (
     <div className={topMargin ? (isMobile ? "topMargin" : "topSMargin") : null}>
-      <h1 className="sMargin listHeader">
+      <h1 className="sMargin cardListHeader">
         {title} <p>&nbsp;</p>
-        {genreId ? <FavBtn id={genreId} bg={null} /> : null}
+        {favGenre ? <FavBtn id={favGenre} bg={null} /> : null}
       </h1>
       <div className="allCards">
         {data && genres

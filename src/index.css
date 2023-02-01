@@ -86,7 +86,7 @@ h2 {
   margin-bottom: 50px;
 }
 
-.listHeader {
+.cardListHeader {
   position: relative;
   z-index: 1;
   display: flex;
@@ -94,7 +94,7 @@ h2 {
   line-height: 0px;
 }
 
-.listHeader::before {
+.cardListHeader::before {
   content: "";
   display: inline-block;
   position: relative;
@@ -106,7 +106,7 @@ h2 {
 }
 
 /* Arrow */
-.listHeader::after {
+.cardListHeader::after {
   --size: 9px;
   --weight: 3px;
   content: "";
@@ -125,16 +125,16 @@ h2 {
   /* transition-delay: 100ms; */
 }
 
-.cardListContainer:hover .listHeader::after {
+.cardListContainer:hover .cardListHeader::after {
   left: -90px;
   opacity: 1;
 }
 
-.listHeader:hover::after {
+.cardListHeader:hover::after {
   left: 10px !important;
 }
 
-.listHeader p {
+.cardListHeader p {
   position: relative;
   top: 4px;
   left: -20px;
@@ -144,7 +144,7 @@ h2 {
   transition: 500ms;
 }
 
-.listHeader:hover p {
+.cardListHeader:hover p {
   opacity: 1;
   left: 10px;
 }

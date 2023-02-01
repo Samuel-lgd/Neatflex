@@ -51,9 +51,6 @@
   box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 20px;
 }
 
-.flex {
-  display: flex;
-}
 .cardList {
   position: relative;
   left: 0px;

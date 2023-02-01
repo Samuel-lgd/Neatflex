@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { HiPlus, HiCheck } from "react-icons/hi";
 import styles from "./header.module.css";
-import { useIsDataAdded, addFilm } from "../scripts/addToLocalstorageScript";
+import { isDataAdded, addFilm } from "../scripts/addToLocalstorageScript";
 
 function AddListBtn(filmId) {
-  const [added, setAdded] = useState(useIsDataAdded(filmId, "USER_LIST"));
+  const [added, setAdded] = useState(isDataAdded(filmId, "USER_LIST"));
 
   return (
     <div

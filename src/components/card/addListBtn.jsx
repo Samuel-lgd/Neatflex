@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { useIsDataAdded, addFilm } from "../scripts/addToLocalstorageScript";
+import React, { useState } from "react";
+import { isDataAdded, addFilm } from "../scripts/addToLocalstorageScript";
 import { MdAdd, MdOutlineDone } from "react-icons/md";
 import styles from "./card.module.css";
 
 function AddListBtn(props) {
-  const [added, setAdded] = useState(useIsDataAdded(props.filmId, "USER_LIST"));
+  const [added, setAdded] = useState(isDataAdded(props.filmId, "USER_LIST"));
 
   return (
     <div

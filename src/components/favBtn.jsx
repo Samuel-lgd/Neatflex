@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import styles from "./genres.module.css";
-import { useIsDataAdded, addFilm } from "./scripts/addToLocalstorageScript";
+import { isDataAdded, addFilm } from "./scripts/addToLocalstorageScript";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 
 function FavBtn({ id, bg }) {
-  const [added, setAdded] = useState(useIsDataAdded(id, "USER_GENRES"));
+  const [added, setAdded] = useState(isDataAdded(id, "USER_GENRES"));
   return (
     <div
       style={bg ? { backgroundColor: "#0000005f" } : { borderRadius: "5px" }}

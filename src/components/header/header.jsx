@@ -83,8 +83,6 @@ function Header() {
     setFocused(false);
   }
 
-  console.log(searchFocus);
-
   return (
     <>
       <div

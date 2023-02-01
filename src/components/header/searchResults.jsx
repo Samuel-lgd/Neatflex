@@ -4,12 +4,10 @@ import styles from "./header.module.css";
 import { MdAdd, MdOutlineDone } from "react-icons/md";
 import AddListBtn from "./addListBtn";
 import { BiRightArrowAlt } from "react-icons/bi";
-import { useIsDataAdded, addFilm } from "../scripts/addToLocalstorageScript";
+import { isDataAdded, addFilm } from "../scripts/addToLocalstorageScript";
 
 function SearchResults(props) {
-  const [added, setAdded] = useState(
-    useIsDataAdded(props.film.id, "USER_LIST")
-  );
+  const [added, setAdded] = useState(isDataAdded(props.film.id, "USER_LIST"));
 
   return (
     <>

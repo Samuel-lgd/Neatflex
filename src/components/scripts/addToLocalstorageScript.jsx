@@ -1,52 +1,27 @@
-import { useState, useEffect } from "react";
-
-function useIsDataAdded(id, localStorageName) {
-  const [userList, setUserList] = useState(getList);
-  const [added, setAdded] = useState(isAdded);
-
-  function getList() {
-    const data = window.localStorage.getItem(localStorageName);
-    if (data) {
-      return JSON.parse(data);
-    } else {
-      return [];
-    }
-  }
-
-  useEffect(() => {
-    window.localStorage.setItem(localStorageName, JSON.stringify(userList));
-  }, [userList]);
-
-  function isAdded() {
-    if (userList.includes(id)) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-  return added;
+function isDataAdded(id, localStorageKey) {
+  const data = window.localStorage.getItem(localStorageKey);
+  const userList = JSON.parse(data) || [];
+  return userList.includes(id);
 }
 
-function addFilm(isAdded, id, localStorageName) {
-  const data = window.localStorage.getItem(localStorageName);
+function addFilm(id, localStorageKey) {
+  const data = window.localStorage.getItem(localStorageKey);
   const userList = JSON.parse(data);
+  const isAdded = isDataAdded(id, localStorageKey);
 
-  //suppréssion si déjà ajouté
+  // Si le film est déjà dans la liste, on le retire. Sinon on l'ajoute
   if (isAdded) {
-    userList.map((item, key) => {
+    userList.map((item, index) => {
       if (item === id) {
-        userList.splice(key, 1);
+        userList.splice(index, 1);
       }
     });
   } else {
-    //ajout dans local storage si pas déja fait par un autre bouton
-    if (!userList.includes(id)) {
-      userList.push(id);
-    }
+    userList.push(id);
   }
-  isAdded = !isAdded;
-  window.localStorage.setItem(localStorageName, JSON.stringify(userList));
-  return isAdded;
+
+  window.localStorage.setItem(localStorageKey, JSON.stringify(userList));
+  return !isAdded;
 }
 
-export { useIsDataAdded, addFilm };
+export { isDataAdded, addFilm };
