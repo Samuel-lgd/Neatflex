@@ -33,10 +33,7 @@ function App() {
         <Header />
         <div className="appContent">
           <Routes>
-            <Route
-              exact
-              path="/Neatflex"
-              element={
+            <Route exact path="" element={
                 <>
                   {data ? <HeaderVideo filmId={data.results[0].id} /> : null}
                   <Home />
@@ -44,10 +41,7 @@ function App() {
               }
             ></Route>
             <Route path="/genres" element={<Genres />}></Route>
-            <Route
-              path="/data/:title"
-              element={<PageCards topMargin={true} />}
-            ></Route>
+            <Route path="/data/:title" element={<PageCards topMargin={true} />}></Route>
           </Routes>
           <Routes>
             <Route path="/film">

@@ -93,7 +93,7 @@ function Header() {
         <div className={styles.row}>
           <Link
             style={{ textDecoration: "none" }}
-            to="/Neatflex"
+            to=""
             onClick={() => setOpen(true)}
           >
             <img
@@ -106,7 +106,7 @@ function Header() {
 
           <Link
             style={{ textDecoration: "none" }}
-            to="/Neatflex"
+            to=""
             onClick={() => setOpen(true)}
           >
             <p className={styles.link}>Home</p>
